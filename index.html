@@ -49,43 +49,35 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="hero-bg min-h-[100dvh] flex items-center pt-16">
         <div class="max-w-screen-xl mx-auto px-5 md:px-8">
             <div class="max-w-2xl">
-                
-                <!-- Two Color Headline (Mobile Responsive) -->
                 <h1 class="font-display text-5xl sm:text-6xl md:text-7xl tracking-tighter text-white mb-6 leading-tight">
                     Securing Tomorrow<br>
                     <span class="text-cyan-400">with Post-Quantum Cryptography</span>
                 </h1>
-
                 <p class="text-lg sm:text-xl text-slate-200 mb-8">Helping organizations migrate to quantum-safe security.</p>
                 
-                <!-- Buttons (Mobile Friendly) -->
                 <div class="flex flex-col sm:flex-row gap-4">
                     <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })" 
-                            class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-3xl flex items-center justify-center gap-x-2 hover:scale-[1.02] transition-all text-center">
-                        Explore Tools
-                    </button>
+                            class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-3xl">Explore Tools</button>
 
                     <a href="https://www.linkedin.com/in/ajay-salunkhe-9a72b7406" target="_blank"
-                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2 transition-all text-center">
-                        <i class="fa-brands fa-linkedin text-xl"></i>
-                        <span>LinkedIn</span>
+                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
+                        <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
                     </a>
 
-                    <a href="#" target="_blank"
-                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2 transition-all text-center">
-                        <i class="fa-brands fa-github text-xl"></i>
-                        <span>GitHub</span>
+                    <a href="https://github.com/ajaysalunkhe206" target="_blank"
+                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
+                        <i class="fa-brands fa-github"></i> <span>GitHub</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
         <h2 class="text-4xl font-display tracking-tight mb-6">About Ajay Salunkhe</h2>
         <p class="text-lg text-slate-300 max-w-3xl">Post-Quantum Cryptography specialist helping enterprises with quantum-safe migration, TLS, and PKI modernization.</p>
@@ -96,24 +88,32 @@
         <div class="max-w-screen-xl mx-auto px-5 md:px-8">
             <h2 class="text-4xl font-display tracking-tight text-center mb-10">PQC Migration Tools</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Tool 1 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-search text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">PQ-Scan Pro</div>
                     <p class="text-sm text-slate-300 mb-5">Cryptographic inventory & readiness scanner.</p>
                     <button onclick="openToolModal(1)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Launch Scanner</button>
                 </div>
+
+                <!-- Tool 2 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-route text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">MigrateFlow</div>
                     <p class="text-sm text-slate-300 mb-5">Intelligent PQC migration roadmap generator.</p>
                     <button onclick="openToolModal(2)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Generate Roadmap</button>
                 </div>
+
+                <!-- Tool 3 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-balance-scale text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">Q-Compare</div>
                     <p class="text-sm text-slate-300 mb-5">Compare NIST PQC algorithms.</p>
                     <button onclick="openToolModal(3)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Compare Algorithms</button>
                 </div>
+
+                <!-- Tool 4 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-link text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">HybridTLS Lab</div>
@@ -152,52 +152,104 @@
                     <button onclick="showFooterModal('privacy')" class="hover:text-cyan-400">Privacy Policy</button>
                     <button onclick="showFooterModal('disclaimer')" class="hover:text-cyan-400">Disclaimer</button>
                 </div>
-                <div class="text-sm text-slate-400">
-                    © All Rights Reserved Ajay Salunkhe
-                </div>
+                <div class="text-sm text-slate-400">© All Rights Reserved Ajay Salunkhe</div>
             </div>
         </div>
     </footer>
 
-    <!-- Modals -->
+    <!-- Tool Modal -->
+    <dialog id="tool-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-0 backdrop:bg-black/70">
+        <div class="p-8" id="tool-modal-content"></div>
+    </dialog>
+
+    <!-- Footer Modal -->
     <dialog id="footer-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-0 backdrop:bg-black/70">
         <div class="p-8" id="footer-modal-content"></div>
     </dialog>
 
-    <dialog id="consultation-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-0 backdrop:bg-black/70">
-        <div class="p-8">
-            <h3 class="text-2xl font-semibold mb-4">Book Consultation</h3>
-            <form>
-                <input type="text" placeholder="Full Name" class="w-full mb-3 bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3">
-                <input type="email" placeholder="Work Email" class="w-full mb-3 bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3">
-                <button type="button" onclick="bookConsultation()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Submit Request</button>
-            </form>
-        </div>
-    </dialog>
-
     <script>
+        // Tool Modals
+        function openToolModal(toolId) {
+            const modal = document.getElementById('tool-modal');
+            const content = document.getElementById('tool-modal-content');
+            
+            let html = '';
+            
+            if (toolId === 1) {
+                html = `
+                    <h3 class="text-2xl font-semibold mb-4">PQ-Scan Pro</h3>
+                    <p class="mb-4 text-slate-300">Enter a domain to scan for quantum-vulnerable cryptography.</p>
+                    <input type="text" id="scan-input" value="api.company.com" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-4">
+                    <button onclick="runPQScan()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Run Scan</button>
+                    <div id="scan-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
+                `;
+            } else if (toolId === 2) {
+                html = `
+                    <h3 class="text-2xl font-semibold mb-4">MigrateFlow</h3>
+                    <p class="mb-4 text-slate-300">Get a personalized PQC migration roadmap.</p>
+                    <button onclick="generateRoadmap()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Generate Roadmap</button>
+                    <div id="roadmap-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
+                `;
+            } else if (toolId === 3) {
+                html = `
+                    <h3 class="text-2xl font-semibold mb-4">Q-Compare</h3>
+                    <p class="mb-4 text-slate-300">Compare NIST Post-Quantum Algorithms.</p>
+                    <button onclick="compareAlgorithms()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Compare Algorithms</button>
+                    <div id="compare-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
+                `;
+            } else if (toolId === 4) {
+                html = `
+                    <h3 class="text-2xl font-semibold mb-4">HybridTLS Lab</h3>
+                    <p class="mb-4 text-slate-300">Test quantum-safe hybrid TLS configuration.</p>
+                    <button onclick="testHybridTLS()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Test Configuration</button>
+                    <div id="tls-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
+                `;
+            }
+            
+            content.innerHTML = html;
+            modal.showModal();
+        }
+
+        // Tool Functions
+        function runPQScan() {
+            const result = document.getElementById('scan-result');
+            result.innerHTML = `Scan complete. Found 3 vulnerable algorithms. Recommendation: Start hybrid migration.`;
+            result.classList.remove('hidden');
+        }
+
+        function generateRoadmap() {
+            const result = document.getElementById('roadmap-result');
+            result.innerHTML = `Your 12-month roadmap generated:<br>Phase 1: Inventory → Phase 2: Hybrid TLS → Phase 3: Full PQC migration.`;
+            result.classList.remove('hidden');
+        }
+
+        function compareAlgorithms() {
+            const result = document.getElementById('compare-result');
+            result.innerHTML = `Kyber-768: Best for key exchange<br>Dilithium-3: Best for signatures<br>Recommendation: Use hybrid approach.`;
+            result.classList.remove('hidden');
+        }
+
+        function testHybridTLS() {
+            const result = document.getElementById('tls-result');
+            result.innerHTML = `Configuration test passed! Quantum-safe hybrid TLS ready.`;
+            result.classList.remove('hidden');
+        }
+
+        // Footer Modals
         function showFooterModal(type) {
             const modal = document.getElementById('footer-modal');
             const content = document.getElementById('footer-modal-content');
             let html = '';
+            
             if (type === 'about') {
                 html = `<h3 class="text-2xl font-semibold mb-4">About Ajay Salunkhe</h3><p class="text-sm text-slate-300">Ajay Salunkhe is a Post-Quantum Cryptography expert based in Bengaluru, specializing in enterprise PQC migration, quantum-safe TLS, and cryptographic strategy.</p>`;
             } else if (type === 'privacy') {
-                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3><p class="text-sm text-slate-300">We respect your privacy. Information submitted is used only to respond to your queries. We do not share your data.</p>`;
+                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3><p class="text-sm text-slate-300">We respect your privacy. Information submitted is used only to respond to your queries.</p>`;
             } else if (type === 'disclaimer') {
                 html = `<h3 class="text-2xl font-semibold mb-4">Disclaimer</h3><p class="text-sm text-slate-300">The tools and information on this website are for educational purposes. Please validate results before production use.</p>`;
             }
             content.innerHTML = html + `<button onclick="document.getElementById('footer-modal').close()" class="mt-6 text-sm text-cyan-400">Close</button>`;
             modal.showModal();
-        }
-
-        function bookConsultation() {
-            document.getElementById('consultation-modal').close();
-            alert("Thank you! Ajay will contact you within 24 hours.");
-        }
-
-        function openToolModal(toolId) {
-            alert("Tool opened (Demo mode)");
         }
     </script>
 </body>

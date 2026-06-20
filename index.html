@@ -63,12 +63,15 @@
                     <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })" 
                             class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-3xl">Explore Tools</button>
 
+                    <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/ajay-salunkhe-9a72b7406" target="_blank"
                        class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
                         <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
                     </a>
 
-                    <a href="https://github.com/ajaysalunkhe206-netizen" target="_blank"
+                    <!-- GitHub Button -->
+                    <!-- >>> YAHAN APNA GITHUB USERNAME DAALO <<< -->
+                    <a href="https://github.com/YOUR_USERNAME_HERE" target="_blank"
                        class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
                         <i class="fa-brands fa-github"></i> <span>GitHub</span>
                     </a>
@@ -77,13 +80,13 @@
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
         <h2 class="text-4xl font-display tracking-tight mb-6">About Ajay Salunkhe</h2>
         <p class="text-lg text-slate-300 max-w-3xl">Post-Quantum Cryptography specialist helping enterprises with quantum-safe migration, TLS, and PKI modernization.</p>
     </section>
 
-    <!-- Tools -->
+    <!-- Tools Section -->
     <section id="tools" class="bg-slate-900 py-16 border-y border-slate-800">
         <div class="max-w-screen-xl mx-auto px-5 md:px-8">
             <h2 class="text-4xl font-display tracking-tight text-center mb-10">PQC Migration Tools</h2>
@@ -240,7 +243,6 @@
             modal.showModal();
         }
 
-        // Tool demo functions
         function runScan(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Scan complete. 3 vulnerable algorithms found.</div>`; }
         function generateRoadmap(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Your 12-month PQC Migration Roadmap has been generated.</div>`; }
         function compareAlgorithms(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Hybrid approach (Kyber + Dilithium) is recommended.</div>`; }

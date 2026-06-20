@@ -83,37 +83,29 @@
         <p class="text-lg text-slate-300 max-w-3xl">Post-Quantum Cryptography specialist helping enterprises with quantum-safe migration, TLS, and PKI modernization.</p>
     </section>
 
-    <!-- Tools Section -->
+    <!-- Tools -->
     <section id="tools" class="bg-slate-900 py-16 border-y border-slate-800">
         <div class="max-w-screen-xl mx-auto px-5 md:px-8">
             <h2 class="text-4xl font-display tracking-tight text-center mb-10">PQC Migration Tools</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Tool 1 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-search text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">PQ-Scan Pro</div>
                     <p class="text-sm text-slate-300 mb-5">Cryptographic inventory & readiness scanner.</p>
                     <button onclick="openToolModal(1)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Launch Scanner</button>
                 </div>
-
-                <!-- Tool 2 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-route text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">MigrateFlow</div>
                     <p class="text-sm text-slate-300 mb-5">Intelligent PQC migration roadmap generator.</p>
                     <button onclick="openToolModal(2)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Generate Roadmap</button>
                 </div>
-
-                <!-- Tool 3 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-balance-scale text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">Q-Compare</div>
                     <p class="text-sm text-slate-300 mb-5">Compare NIST PQC algorithms.</p>
                     <button onclick="openToolModal(3)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Compare Algorithms</button>
                 </div>
-
-                <!-- Tool 4 -->
                 <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
                     <i class="fa-solid fa-link text-2xl text-cyan-400 mb-3"></i>
                     <div class="font-semibold mb-2">HybridTLS Lab</div>
@@ -124,21 +116,40 @@
         </div>
     </section>
 
-    <!-- Expertise -->
+    <!-- How I Help Organizations -->
     <section id="expertise" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
-        <h2 class="text-4xl font-display tracking-tight text-center mb-10">How I Help Organizations</h2>
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-display tracking-tight">How I Help Organizations</h2>
+            <p class="text-slate-400 mt-2">Practical Post-Quantum Cryptography migration support for enterprises</p>
+        </div>
+
         <div class="grid md:grid-cols-3 gap-6">
             <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-2">PQC Readiness Assessment</h4>
-                <p class="text-sm text-slate-300">Full cryptographic discovery and quantum risk scoring.</p>
+                <h4 class="font-semibold text-xl mb-3">PQC Readiness Assessment</h4>
+                <p class="text-sm text-slate-300 mb-4">We conduct a complete cryptographic inventory to identify quantum-vulnerable algorithms and assess your current risk level.</p>
+                <ul class="text-sm text-slate-300 space-y-1">
+                    <li>✓ Full crypto discovery & inventory</li>
+                    <li>✓ Quantum risk scoring</li>
+                    <li>✓ Priority-based migration roadmap</li>
+                </ul>
             </div>
             <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-2">Migration Strategy</h4>
-                <p class="text-sm text-slate-300">Phased roadmaps aligned with NIST guidelines.</p>
+                <h4 class="font-semibold text-xl mb-3">Migration Strategy & Roadmap</h4>
+                <p class="text-sm text-slate-300 mb-4">We create a practical, phased migration plan aligned with NIST guidelines that fits your business timeline and budget.</p>
+                <ul class="text-sm text-slate-300 space-y-1">
+                    <li>✓ Step-by-step migration plan</li>
+                    <li>✓ Hybrid cryptography approach</li>
+                    <li>✓ Risk reduction at every phase</li>
+                </ul>
             </div>
             <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-2">Quantum-Safe Architecture</h4>
-                <p class="text-sm text-slate-300">Hybrid cryptography and PKI modernization.</p>
+                <h4 class="font-semibold text-xl mb-3">Quantum-Safe Architecture</h4>
+                <p class="text-sm text-slate-300 mb-4">We help design and implement quantum-resistant systems including hybrid TLS, post-quantum PKI, and secure key management.</p>
+                <ul class="text-sm text-slate-300 space-y-1">
+                    <li>✓ Hybrid TLS implementation</li>
+                    <li>✓ Post-Quantum PKI design</li>
+                    <li>✓ Long-term crypto agility</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -150,107 +161,90 @@
                 <div class="flex flex-wrap gap-x-8 text-sm font-medium">
                     <button onclick="showFooterModal('about')" class="hover:text-cyan-400">About Me</button>
                     <button onclick="showFooterModal('privacy')" class="hover:text-cyan-400">Privacy Policy</button>
-                    <button onclick="showFooterModal('disclaimer')" class="hover:text-cyan-400">Disclaimer</button>
+                    <button onclick="showFooterModal('disclaimer')" class="hover:text-cyan-400">Terms & Conditions</button>
                 </div>
                 <div class="text-sm text-slate-400">© All Rights Reserved Ajay Salunkhe</div>
             </div>
         </div>
     </footer>
 
-    <!-- Tool Modal -->
+    <!-- Modals -->
     <dialog id="tool-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-0 backdrop:bg-black/70">
         <div class="p-8" id="tool-modal-content"></div>
     </dialog>
 
-    <!-- Footer Modal -->
     <dialog id="footer-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-0 backdrop:bg-black/70">
         <div class="p-8" id="footer-modal-content"></div>
     </dialog>
 
     <script>
-        // Tool Modals
         function openToolModal(toolId) {
             const modal = document.getElementById('tool-modal');
             const content = document.getElementById('tool-modal-content');
-            
             let html = '';
-            
+
             if (toolId === 1) {
-                html = `
-                    <h3 class="text-2xl font-semibold mb-4">PQ-Scan Pro</h3>
-                    <p class="mb-4 text-slate-300">Enter a domain to scan for quantum-vulnerable cryptography.</p>
-                    <input type="text" id="scan-input" value="api.company.com" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-4">
-                    <button onclick="runPQScan()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Run Scan</button>
-                    <div id="scan-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
-                `;
+                html = `<h3 class="text-2xl font-semibold mb-4">PQ-Scan Pro</h3>
+                        <p class="mb-4">Enter domain to scan for quantum vulnerable algorithms.</p>
+                        <input type="text" value="api.company.com" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-4">
+                        <button onclick="runScan(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Run Scan</button>`;
             } else if (toolId === 2) {
-                html = `
-                    <h3 class="text-2xl font-semibold mb-4">MigrateFlow</h3>
-                    <p class="mb-4 text-slate-300">Get a personalized PQC migration roadmap.</p>
-                    <button onclick="generateRoadmap()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Generate Roadmap</button>
-                    <div id="roadmap-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
-                `;
+                html = `<h3 class="text-2xl font-semibold mb-4">MigrateFlow</h3>
+                        <p class="mb-4">Click below to generate your personalized migration roadmap.</p>
+                        <button onclick="generateRoadmap(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Generate Roadmap</button>`;
             } else if (toolId === 3) {
-                html = `
-                    <h3 class="text-2xl font-semibold mb-4">Q-Compare</h3>
-                    <p class="mb-4 text-slate-300">Compare NIST Post-Quantum Algorithms.</p>
-                    <button onclick="compareAlgorithms()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Compare Algorithms</button>
-                    <div id="compare-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
-                `;
+                html = `<h3 class="text-2xl font-semibold mb-4">Q-Compare</h3>
+                        <p class="mb-4">Compare top NIST PQC algorithms.</p>
+                        <button onclick="compareAlgorithms(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Compare Now</button>`;
             } else if (toolId === 4) {
-                html = `
-                    <h3 class="text-2xl font-semibold mb-4">HybridTLS Lab</h3>
-                    <p class="mb-4 text-slate-300">Test quantum-safe hybrid TLS configuration.</p>
-                    <button onclick="testHybridTLS()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Test Configuration</button>
-                    <div id="tls-result" class="hidden mt-4 p-4 bg-slate-800 rounded-2xl text-sm"></div>
-                `;
+                html = `<h3 class="text-2xl font-semibold mb-4">HybridTLS Lab</h3>
+                        <p class="mb-4">Test your hybrid TLS configuration.</p>
+                        <button onclick="testHybridTLS(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Test Configuration</button>`;
             }
-            
             content.innerHTML = html;
             modal.showModal();
         }
 
-        // Tool Functions
-        function runPQScan() {
-            const result = document.getElementById('scan-result');
-            result.innerHTML = `Scan complete. Found 3 vulnerable algorithms. Recommendation: Start hybrid migration.`;
-            result.classList.remove('hidden');
-        }
-
-        function generateRoadmap() {
-            const result = document.getElementById('roadmap-result');
-            result.innerHTML = `Your 12-month roadmap generated:<br>Phase 1: Inventory → Phase 2: Hybrid TLS → Phase 3: Full PQC migration.`;
-            result.classList.remove('hidden');
-        }
-
-        function compareAlgorithms() {
-            const result = document.getElementById('compare-result');
-            result.innerHTML = `Kyber-768: Best for key exchange<br>Dilithium-3: Best for signatures<br>Recommendation: Use hybrid approach.`;
-            result.classList.remove('hidden');
-        }
-
-        function testHybridTLS() {
-            const result = document.getElementById('tls-result');
-            result.innerHTML = `Configuration test passed! Quantum-safe hybrid TLS ready.`;
-            result.classList.remove('hidden');
-        }
-
-        // Footer Modals
         function showFooterModal(type) {
             const modal = document.getElementById('footer-modal');
             const content = document.getElementById('footer-modal-content');
             let html = '';
-            
+
             if (type === 'about') {
-                html = `<h3 class="text-2xl font-semibold mb-4">About Ajay Salunkhe</h3><p class="text-sm text-slate-300">Ajay Salunkhe is a Post-Quantum Cryptography expert based in Bengaluru, specializing in enterprise PQC migration, quantum-safe TLS, and cryptographic strategy.</p>`;
+                html = `<h3 class="text-2xl font-semibold mb-4">About Ajay Salunkhe</h3>
+                        <p class="text-sm text-slate-300 mb-4">I am a Post-Quantum Cryptography specialist based in Bengaluru, India. I work with organizations to help them transition securely from classical cryptographic systems to quantum-resistant solutions.</p>
+                        <p class="text-sm text-slate-300 mb-4">My expertise lies in practical PQC migration strategies, cryptographic discovery, hybrid cryptography, post-quantum TLS, and PKI modernization.</p>
+                        <p class="text-sm text-slate-300">Through a combination of consulting and purpose-built tools, I aim to simplify the complex challenges of quantum security.</p>`;
             } else if (type === 'privacy') {
-                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3><p class="text-sm text-slate-300">We respect your privacy. Information submitted is used only to respond to your queries.</p>`;
+                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3>
+                        <p class="text-sm text-slate-300 mb-4">Ajay Salunkhe respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or interact with our tools and content.</p>
+                        <h4 class="font-semibold mt-4 mb-2">Information We Collect</h4>
+                        <p class="text-sm text-slate-300 mb-3">We may collect personal information that you voluntarily provide when you use our interactive tools or contact us through the website.</p>
+                        <h4 class="font-semibold mt-4 mb-2">How We Use Your Information</h4>
+                        <p class="text-sm text-slate-300 mb-3">We use the information we collect to respond to your queries and improve our tools and website experience.</p>
+                        <p class="text-xs text-slate-400 mt-4">Last updated: June 2026</p>`;
             } else if (type === 'disclaimer') {
-                html = `<h3 class="text-2xl font-semibold mb-4">Disclaimer</h3><p class="text-sm text-slate-300">The tools and information on this website are for educational purposes. Please validate results before production use.</p>`;
+                html = `<h3 class="text-2xl font-semibold mb-4">Terms and Conditions</h3>
+                        <p class="text-sm text-slate-300 mb-4">By using this website and its tools, you agree to the following terms:</p>
+                        <h4 class="font-semibold mt-4 mb-2">1. Educational Purpose Only</h4>
+                        <p class="text-sm text-slate-300 mb-3">All tools on this website are for educational and learning purposes only.</p>
+                        <h4 class="font-semibold mt-4 mb-2">2. Not Professional Advice</h4>
+                        <p class="text-sm text-slate-300 mb-3">The information and results provided here are not professional or technical advice.</p>
+                        <h4 class="font-semibold mt-4 mb-2">3. Your Responsibility</h4>
+                        <p class="text-sm text-slate-300 mb-3">You are responsible for verifying all results yourself.</p>
+                        <h4 class="font-semibold mt-4 mb-2">4. No Liability</h4>
+                        <p class="text-sm text-slate-300 mb-3">We are not responsible for any loss or damage caused by the use of this website or its tools.</p>
+                        <p class="text-xs text-slate-400 mt-4">Last updated: June 2026</p>`;
             }
             content.innerHTML = html + `<button onclick="document.getElementById('footer-modal').close()" class="mt-6 text-sm text-cyan-400">Close</button>`;
             modal.showModal();
         }
+
+        // Tool demo functions
+        function runScan(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Scan complete. 3 vulnerable algorithms found.</div>`; }
+        function generateRoadmap(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Your 12-month PQC Migration Roadmap has been generated.</div>`; }
+        function compareAlgorithms(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Hybrid approach (Kyber + Dilithium) is recommended.</div>`; }
+        function testHybridTLS(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Hybrid TLS configuration test passed!</div>`; }
     </script>
 </body>
 </html>

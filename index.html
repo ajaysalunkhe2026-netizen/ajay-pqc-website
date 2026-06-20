@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,56 +7,198 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: system-ui, -apple-system, sans-serif; }
+        body { font-family: 'Inter', system_ui, sans-serif; }
+        .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)), 
+                             url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+        .tool-card { transition: all 0.3s ease; }
+        .tool-card:hover { transform: translateY(-8px); }
     </style>
 </head>
-<body class="bg-zinc-950 text-white">
+<body class="bg-slate-950 text-slate-200">
+
     <!-- Navbar -->
-    <nav class="border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md fixed w-full z-50">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-sm font-bold">AS</div>
-                <span class="text-xl font-semibold">Ajay Salunkhe</span>
-            </div>
-            <div class="flex gap-8 text-sm">
-                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+    <nav class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 fixed w-full z-50">
+        <div class="max-w-screen-xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-x-3 group">
+                <div class="w-11 h-11 flex-shrink-0">
+                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 4L38 10V22C38 31.5 31.5 38 22 40C12.5 38 6 31.5 6 22V10L22 4Z" stroke="#22d3ee" stroke-width="2.5"/>
+                        <path d="M14 16L22 20L30 16" stroke="#67e8f9" stroke-width="1.8"/>
+                        <path d="M14 24L22 28L30 24" stroke="#67e8f9" stroke-width="1.8"/>
+                        <circle cx="22" cy="22" r="3.5" fill="#22d3ee"/>
+                        <circle cx="15" cy="13" r="1.2" fill="#67e8f9"/>
+                        <circle cx="29" cy="29" r="1.2" fill="#67e8f9"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-display text-2xl font-semibold tracking-tight">Ajay Salunkhe</span>
+                    <span class="block text-[10px] text-cyan-400 font-medium tracking-[1.5px] -mt-1">PQC EXPERT</span>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-cyan-400">About</a>
+                <a href="#tools" class="hover:text-cyan-400">Tools</a>
+                <a href="#expertise" class="hover:text-cyan-400">Expertise</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="min-h-screen flex items-center pt-20 bg-gradient-to-b from-zinc-950 to-zinc-900">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                Securing the Future<br>with Post-Quantum Cryptography
-            </h1>
-            <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12">
-                Ajay Salunkhe — Researcher & Consultant in Post-Quantum Cryptography and Migration Strategies.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://linkedin.com/in/ajaysalunkhe" target="_blank" class="bg-white text-black px-10 py-4 rounded-2xl font-medium hover:bg-zinc-200 transition flex items-center justify-center gap-3">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/ajaysalunkhe" target="_blank" class="border border-white px-10 py-4 rounded-2xl font-medium hover:bg-white hover:text-black transition flex items-center justify-center gap-3">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-[100dvh] flex items-center pt-16">
+        <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+            <div class="max-w-2xl">
+                
+                <!-- Two Color Headline (Mobile Responsive) -->
+                <h1 class="font-display text-5xl sm:text-6xl md:text-7xl tracking-tighter text-white mb-6 leading-tight">
+                    Securing Tomorrow<br>
+                    <span class="text-cyan-400">with Post-Quantum Cryptography</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-slate-200 mb-8">Helping organizations migrate to quantum-safe security.</p>
+                
+                <!-- Buttons (Mobile Friendly) -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })" 
+                            class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-3xl flex items-center justify-center gap-x-2 hover:scale-[1.02] transition-all text-center">
+                        Explore Tools
+                    </button>
+
+                    <a href="https://www.linkedin.com/in/ajay-salunkhe-9a72b7406" target="_blank"
+                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2 transition-all text-center">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                        <span>LinkedIn</span>
+                    </a>
+
+                    <a href="#" target="_blank"
+                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2 transition-all text-center">
+                        <i class="fa-brands fa-github text-xl"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
+        <h2 class="text-4xl font-display tracking-tight mb-6">About Ajay Salunkhe</h2>
+        <p class="text-lg text-slate-300 max-w-3xl">Post-Quantum Cryptography specialist helping enterprises with quantum-safe migration, TLS, and PKI modernization.</p>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="bg-slate-900 py-16 border-y border-slate-800">
+        <div class="max-w-screen-xl mx-auto px-5 md:px-8">
+            <h2 class="text-4xl font-display tracking-tight text-center mb-10">PQC Migration Tools</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                    <i class="fa-solid fa-search text-2xl text-cyan-400 mb-3"></i>
+                    <div class="font-semibold mb-2">PQ-Scan Pro</div>
+                    <p class="text-sm text-slate-300 mb-5">Cryptographic inventory & readiness scanner.</p>
+                    <button onclick="openToolModal(1)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Launch Scanner</button>
+                </div>
+                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                    <i class="fa-solid fa-route text-2xl text-cyan-400 mb-3"></i>
+                    <div class="font-semibold mb-2">MigrateFlow</div>
+                    <p class="text-sm text-slate-300 mb-5">Intelligent PQC migration roadmap generator.</p>
+                    <button onclick="openToolModal(2)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Generate Roadmap</button>
+                </div>
+                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                    <i class="fa-solid fa-balance-scale text-2xl text-cyan-400 mb-3"></i>
+                    <div class="font-semibold mb-2">Q-Compare</div>
+                    <p class="text-sm text-slate-300 mb-5">Compare NIST PQC algorithms.</p>
+                    <button onclick="openToolModal(3)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Compare Algorithms</button>
+                </div>
+                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
+                    <i class="fa-solid fa-link text-2xl text-cyan-400 mb-3"></i>
+                    <div class="font-semibold mb-2">HybridTLS Lab</div>
+                    <p class="text-sm text-slate-300 mb-5">Test quantum-safe hybrid TLS configurations.</p>
+                    <button onclick="openToolModal(4)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Open Lab</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise -->
+    <section id="expertise" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
+        <h2 class="text-4xl font-display tracking-tight text-center mb-10">How I Help Organizations</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
+                <h4 class="font-semibold text-xl mb-2">PQC Readiness Assessment</h4>
+                <p class="text-sm text-slate-300">Full cryptographic discovery and quantum risk scoring.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
+                <h4 class="font-semibold text-xl mb-2">Migration Strategy</h4>
+                <p class="text-sm text-slate-300">Phased roadmaps aligned with NIST guidelines.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
+                <h4 class="font-semibold text-xl mb-2">Quantum-Safe Architecture</h4>
+                <p class="text-sm text-slate-300">Hybrid cryptography and PKI modernization.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-zinc-950 border-t border-zinc-800 py-12">
-        <div class="max-w-6xl mx-auto px-6 text-center text-zinc-500 text-sm">
-            <p>© 2026 Ajay Salunkhe. All Rights Reserved.</p>
-            <div class="flex flex-wrap justify-center gap-8 mt-6">
-                <a href="#" class="hover:text-zinc-400">Privacy Policy</a>
-                <a href="#" class="hover:text-zinc-400">Disclaimer</a>
-                <a href="#" class="hover:text-zinc-400">Terms of Service</a>
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="max-w-screen-xl mx-auto px-5 md:px-8 py-10">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
+                <div class="flex flex-wrap gap-x-8 text-sm font-medium">
+                    <button onclick="showFooterModal('about')" class="hover:text-cyan-400">About Me</button>
+                    <button onclick="showFooterModal('privacy')" class="hover:text-cyan-400">Privacy Policy</button>
+                    <button onclick="showFooterModal('disclaimer')" class="hover:text-cyan-400">Disclaimer</button>
+                </div>
+                <div class="text-sm text-slate-400">
+                    © All Rights Reserved Ajay Salunkhe
+                </div>
             </div>
         </div>
     </footer>
-</body>
-    <!-- Test Line -->
-<p class="text-center text-zinc-400 text-sm mt-8">Website under development...</p>
-</html>
 
+    <!-- Modals -->
+    <dialog id="footer-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-0 backdrop:bg-black/70">
+        <div class="p-8" id="footer-modal-content"></div>
+    </dialog>
+
+    <dialog id="consultation-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-md w-full p-0 backdrop:bg-black/70">
+        <div class="p-8">
+            <h3 class="text-2xl font-semibold mb-4">Book Consultation</h3>
+            <form>
+                <input type="text" placeholder="Full Name" class="w-full mb-3 bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3">
+                <input type="email" placeholder="Work Email" class="w-full mb-3 bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3">
+                <button type="button" onclick="bookConsultation()" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Submit Request</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script>
+        function showFooterModal(type) {
+            const modal = document.getElementById('footer-modal');
+            const content = document.getElementById('footer-modal-content');
+            let html = '';
+            if (type === 'about') {
+                html = `<h3 class="text-2xl font-semibold mb-4">About Ajay Salunkhe</h3><p class="text-sm text-slate-300">Ajay Salunkhe is a Post-Quantum Cryptography expert based in Bengaluru, specializing in enterprise PQC migration, quantum-safe TLS, and cryptographic strategy.</p>`;
+            } else if (type === 'privacy') {
+                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3><p class="text-sm text-slate-300">We respect your privacy. Information submitted is used only to respond to your queries. We do not share your data.</p>`;
+            } else if (type === 'disclaimer') {
+                html = `<h3 class="text-2xl font-semibold mb-4">Disclaimer</h3><p class="text-sm text-slate-300">The tools and information on this website are for educational purposes. Please validate results before production use.</p>`;
+            }
+            content.innerHTML = html + `<button onclick="document.getElementById('footer-modal').close()" class="mt-6 text-sm text-cyan-400">Close</button>`;
+            modal.showModal();
+        }
+
+        function bookConsultation() {
+            document.getElementById('consultation-modal').close();
+            alert("Thank you! Ajay will contact you within 24 hours.");
+        }
+
+        function openToolModal(toolId) {
+            alert("Tool opened (Demo mode)");
+        }
+    </script>
+</body>
+</html>

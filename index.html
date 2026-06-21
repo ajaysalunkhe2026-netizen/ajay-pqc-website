@@ -1,249 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Salunkhe | Post-Quantum Cryptography Expert</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', system_ui, sans-serif; }
-        .font-display { font-family: 'Space Grotesk', 'Inter', sans-serif; }
-        .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.92)), 
-                             url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
-        }
-        .tool-card { transition: all 0.3s ease; }
-        .tool-card:hover { transform: translateY(-8px); }
-    </style>
-</head>
-<body class="bg-slate-950 text-slate-200">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PQC Migration | Architect</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <!-- Navbar -->
-    <nav class="bg-slate-900/95 backdrop-blur-md border-b border-slate-800 fixed w-full z-50">
-        <div class="max-w-screen-xl mx-auto px-5 md:px-8 py-4 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-x-3 group">
-                <div class="w-11 h-11 flex-shrink-0">
-                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 4L38 10V22C38 31.5 31.5 38 22 40C12.5 38 6 31.5 6 22V10L22 4Z" stroke="#22d3ee" stroke-width="2.5"/>
-                        <path d="M14 16L22 20L30 16" stroke="#67e8f9" stroke-width="1.8"/>
-                        <path d="M14 24L22 28L30 24" stroke="#67e8f9" stroke-width="1.8"/>
-                        <circle cx="22" cy="22" r="3.5" fill="#22d3ee"/>
-                        <circle cx="15" cy="13" r="1.2" fill="#67e8f9"/>
-                        <circle cx="29" cy="29" r="1.2" fill="#67e8f9"/>
-                    </svg>
-                </div>
-                <div>
-                    <span class="font-display text-2xl font-semibold tracking-tight">Ajay Salunkhe</span>
-                    <span class="block text-[10px] text-cyan-400 font-medium tracking-[1.5px] -mt-1">PQC EXPERT</span>
-                </div>
-            </a>
+		<!-- Header -->
+			<header id="header">
+				<h1><a href="#">PQC Architect</a></h1>
+				<nav>
+					<ul>
+						<li><a href="#intro">Home</a></li>
+						<li><a href="#one">Services</a></li>
+						<li><a href="#two">About Me</a></li>
+						<li><a href="#pqc-tool">Free Tool</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
 
-            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-cyan-400">About</a>
-                <a href="#tools" class="hover:text-cyan-400">Tools</a>
-                <a href="#expertise" class="hover:text-cyan-400">Expertise</a>
-            </div>
-        </div>
-    </nav>
+		<!-- Intro -->
+			<section id="intro" class="main style1 dark fullscreen">
+				<div class="content">
+					<header>
+						<h2>Post-Quantum Cryptography</h2>
+					</header>
+					<p>Quantum-safe migration ke liye expert consulting.<br>
+					Hybrid PQC, Crypto-agility &amp; TLS Migration.</p>
+					<footer>
+						<a href="#one" class="button style2 down">Services</a>
+					</footer>
+				</div>
+			</section>
 
-    <!-- Hero -->
-    <section class="hero-bg min-h-[100dvh] flex items-center pt-16">
-        <div class="max-w-screen-xl mx-auto px-5 md:px-8">
-            <div class="max-w-2xl">
-                <h1 class="font-display text-5xl sm:text-6xl md:text-7xl tracking-tighter text-white mb-6 leading-tight">
-                    Securing Tomorrow<br>
-                    <span class="text-cyan-400">with Post-Quantum Cryptography</span>
-                </h1>
-                <p class="text-lg sm:text-xl text-slate-200 mb-8">Helping organizations migrate to quantum-safe security.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button onclick="document.getElementById('tools').scrollIntoView({ behavior: 'smooth' })" 
-                            class="px-8 py-4 bg-white text-slate-950 font-semibold rounded-3xl">Explore Tools</button>
+		<!-- One -->
+			<section id="one" class="main style2 right dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>What I Do</h2>
+					</header>
+					<p>Post-Quantum Cryptography migration, TLS assessment, crypto-agility implementation aur enterprise level PQC consulting.</p>
+				</div>
+				<a href="#two" class="button style2 down anchored">Next</a>
+			</section>
 
-                    <a href="https://www.linkedin.com/in/ajay-salunkhe-9a72b7406" target="_blank"
-                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
-                        <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
-                    </a>
+		<!-- Two -->
+			<section id="two" class="main style2 left dark fullscreen">
+				<div class="content box style2">
+					<header>
+						<h2>Who I Am</h2>
+					</header>
+					<p>Experienced architect specializing in Post-Quantum Cryptography migration for organizations preparing for quantum threats.</p>
+				</div>
+				<a href="#pqc-tool" class="button style2 down anchored">Try Free Tool</a>
+			</section>
 
-                    <a href="https://github.com/ajaysalunkhe2026-netizen" target="_blank"
-                       class="px-6 py-4 border border-white/70 hover:bg-white/10 font-semibold rounded-3xl flex items-center justify-center gap-x-2">
-                        <i class="fa-brands fa-github"></i> <span>GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- PQC Tool -->
+			<section id="pqc-tool" class="main style3 secondary">
+				<div class="content container">
+					<header>
+						<h2>Free PQC Risk Assessment</h2>
+						<p>Apni website ka quantum risk check karo</p>
+					</header>
+					<div style="max-width: 600px; margin: 0 auto;">
+						<input type="text" id="domain" placeholder="yourwebsite.com" style="width:100%; padding:15px; font-size:18px; border:2px solid #ddd; border-radius:8px; margin-bottom:20px;">
+						<button onclick="checkPQC()" style="width:100%; padding:16px; background:#0066cc; color:white; font-size:18px; border:none; border-radius:8px;">Check Quantum Risk</button>
+						<div id="pqc-result" style="margin-top:30px; padding:25px; background:white; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); display:none;"></div>
+					</div>
+				</div>
+			</section>
 
-    <!-- About -->
-    <section id="about" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
-        <h2 class="text-4xl font-display tracking-tight mb-6">About Ajay Salunkhe</h2>
-        <p class="text-lg text-slate-300 max-w-3xl">Post-Quantum Cryptography specialist helping enterprises with quantum-safe migration, TLS, and PKI modernization.</p>
-    </section>
+		<!-- Contact -->
+			<section id="contact" class="main style3 secondary">
+				<div class="content">
+					<header>
+						<h2>Get In Touch</h2>
+						<p>PQC migration ke liye baat karein.</p>
+					</header>
+					<div class="box">
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
+								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
+								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
+							</div>
+							<ul class="actions special">
+								<li><input type="submit" value="Send Message" /></li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</section>
 
-    <!-- Tools -->
-    <section id="tools" class="bg-slate-900 py-16 border-y border-slate-800">
-        <div class="max-w-screen-xl mx-auto px-5 md:px-8">
-            <h2 class="text-4xl font-display tracking-tight text-center mb-10">PQC Migration Tools</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
-                    <i class="fa-solid fa-search text-2xl text-cyan-400 mb-3"></i>
-                    <div class="font-semibold mb-2">PQ-Scan Pro</div>
-                    <p class="text-sm text-slate-300 mb-5">Cryptographic inventory & readiness scanner.</p>
-                    <button onclick="openToolModal(1)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Launch Scanner</button>
-                </div>
-                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
-                    <i class="fa-solid fa-route text-2xl text-cyan-400 mb-3"></i>
-                    <div class="font-semibold mb-2">MigrateFlow</div>
-                    <p class="text-sm text-slate-300 mb-5">Intelligent PQC migration roadmap generator.</p>
-                    <button onclick="openToolModal(2)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Generate Roadmap</button>
-                </div>
-                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
-                    <i class="fa-solid fa-balance-scale text-2xl text-cyan-400 mb-3"></i>
-                    <div class="font-semibold mb-2">Q-Compare</div>
-                    <p class="text-sm text-slate-300 mb-5">Compare NIST PQC algorithms.</p>
-                    <button onclick="openToolModal(3)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Compare Algorithms</button>
-                </div>
-                <div class="tool-card bg-slate-800 border border-slate-700 rounded-3xl p-6">
-                    <i class="fa-solid fa-link text-2xl text-cyan-400 mb-3"></i>
-                    <div class="font-semibold mb-2">HybridTLS Lab</div>
-                    <p class="text-sm text-slate-300 mb-5">Test quantum-safe hybrid TLS configurations.</p>
-                    <button onclick="openToolModal(4)" class="w-full py-3 bg-slate-700 hover:bg-cyan-400 hover:text-slate-950 rounded-2xl text-sm font-semibold">Open Lab</button>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+				</ul>
+				<ul class="menu">
+					<li>&copy; PQC Architect</li>
+				</ul>
+			</footer>
 
-    <!-- How I Help Organizations -->
-    <section id="expertise" class="max-w-screen-xl mx-auto px-5 md:px-8 py-16">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-display tracking-tight">How I Help Organizations</h2>
-            <p class="text-slate-400 mt-2">Practical Post-Quantum Cryptography migration support for enterprises</p>
-        </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-3">PQC Readiness Assessment</h4>
-                <p class="text-sm text-slate-300 mb-4">We conduct a complete cryptographic inventory to identify quantum-vulnerable algorithms and assess your current risk level.</p>
-                <ul class="text-sm text-slate-300 space-y-1">
-                    <li>✓ Full crypto discovery & inventory</li>
-                    <li>✓ Quantum risk scoring</li>
-                    <li>✓ Priority-based migration roadmap</li>
-                </ul>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-3">Migration Strategy & Roadmap</h4>
-                <p class="text-sm text-slate-300 mb-4">We create a practical, phased migration plan aligned with NIST guidelines that fits your business timeline and budget.</p>
-                <ul class="text-sm text-slate-300 space-y-1">
-                    <li>✓ Step-by-step migration plan</li>
-                    <li>✓ Hybrid cryptography approach</li>
-                    <li>✓ Risk reduction at every phase</li>
-                </ul>
-            </div>
-            <div class="bg-slate-900 border border-slate-700 rounded-3xl p-7">
-                <h4 class="font-semibold text-xl mb-3">Quantum-Safe Architecture</h4>
-                <p class="text-sm text-slate-300 mb-4">We help design and implement quantum-resistant systems including hybrid TLS, post-quantum PKI, and secure key management.</p>
-                <ul class="text-sm text-slate-300 space-y-1">
-                    <li>✓ Hybrid TLS implementation</li>
-                    <li>✓ Post-Quantum PKI design</li>
-                    <li>✓ Long-term crypto agility</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+		<script>
+		function checkPQC() {
+			let domain = document.getElementById('domain').value.trim();
+			if (!domain) {
+				alert("Domain daalo");
+				return;
+			}
+			document.getElementById('pqc-result').style.display = 'block';
+			document.getElementById('pqc-result').innerHTML = `
+				<h3>${domain} ka Report</h3>
+				<p><strong>Quantum Risk:</strong> HIGH</p>
+				<p>Traditional cryptography vulnerable hai. Hybrid PQC migration ki zarurat hai.</p>
+				<p><a href="#contact">Contact me for full consulting</a></p>
+			`;
+		}
+		</script>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t border-slate-800">
-        <div class="max-w-screen-xl mx-auto px-5 md:px-8 py-10">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-y-6">
-                <div class="flex flex-wrap gap-x-8 text-sm font-medium">
-                    <button onclick="showFooterModal('about')" class="hover:text-cyan-400">About Me</button>
-                    <button onclick="showFooterModal('privacy')" class="hover:text-cyan-400">Privacy Policy</button>
-                    <button onclick="showFooterModal('disclaimer')" class="hover:text-cyan-400">Terms & Conditions</button>
-                </div>
-                <div class="text-sm text-slate-400">© All Rights Reserved Ajay Salunkhe</div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modals -->
-    <dialog id="tool-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-2xl w-full p-0 backdrop:bg-black/70">
-        <div class="p-8" id="tool-modal-content"></div>
-    </dialog>
-
-    <dialog id="footer-modal" class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-0 backdrop:bg-black/70">
-        <div class="p-8" id="footer-modal-content"></div>
-    </dialog>
-
-    <script>
-        function openToolModal(toolId) {
-            const modal = document.getElementById('tool-modal');
-            const content = document.getElementById('tool-modal-content');
-            let html = '';
-
-            if (toolId === 1) {
-                html = `<h3 class="text-2xl font-semibold mb-4">PQ-Scan Pro</h3>
-                        <p class="mb-4">Enter domain to scan for quantum vulnerable algorithms.</p>
-                        <input type="text" value="api.company.com" class="w-full bg-slate-800 border border-slate-700 rounded-2xl px-4 py-3 mb-4">
-                        <button onclick="runScan(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Run Scan</button>`;
-            } else if (toolId === 2) {
-                html = `<h3 class="text-2xl font-semibold mb-4">MigrateFlow</h3>
-                        <p class="mb-4">Click below to generate your personalized migration roadmap.</p>
-                        <button onclick="generateRoadmap(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Generate Roadmap</button>`;
-            } else if (toolId === 3) {
-                html = `<h3 class="text-2xl font-semibold mb-4">Q-Compare</h3>
-                        <p class="mb-4">Compare top NIST PQC algorithms.</p>
-                        <button onclick="compareAlgorithms(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Compare Now</button>`;
-            } else if (toolId === 4) {
-                html = `<h3 class="text-2xl font-semibold mb-4">HybridTLS Lab</h3>
-                        <p class="mb-4">Test your hybrid TLS configuration.</p>
-                        <button onclick="testHybridTLS(this)" class="w-full py-3 bg-cyan-400 text-slate-950 font-semibold rounded-2xl">Test Configuration</button>`;
-            }
-            content.innerHTML = html;
-            modal.showModal();
-        }
-
-        function showFooterModal(type) {
-            const modal = document.getElementById('footer-modal');
-            const content = document.getElementById('footer-modal-content');
-            let html = '';
-
-            if (type === 'about') {
-                html = `<h3 class="text-2xl font-semibold mb-4">About Ajay Salunkhe</h3>
-                        <p class="text-sm text-slate-300 mb-4">I am a Post-Quantum Cryptography specialist based in Bengaluru, India. I work with organizations to help them transition securely from classical cryptographic systems to quantum-resistant solutions.</p>
-                        <p class="text-sm text-slate-300 mb-4">My expertise lies in practical PQC migration strategies, cryptographic discovery, hybrid cryptography, post-quantum TLS, and PKI modernization.</p>
-                        <p class="text-sm text-slate-300">Through a combination of consulting and purpose-built tools, I aim to simplify the complex challenges of quantum security.</p>`;
-            } else if (type === 'privacy') {
-                html = `<h3 class="text-2xl font-semibold mb-4">Privacy Policy</h3>
-                        <p class="text-sm text-slate-300 mb-4">Ajay Salunkhe respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or interact with our tools and content.</p>
-                        <h4 class="font-semibold mt-4 mb-2">Information We Collect</h4>
-                        <p class="text-sm text-slate-300 mb-3">We may collect personal information that you voluntarily provide when you use our interactive tools or contact us through the website.</p>
-                        <h4 class="font-semibold mt-4 mb-2">How We Use Your Information</h4>
-                        <p class="text-sm text-slate-300 mb-3">We use the information we collect to respond to your queries and improve our tools and website experience.</p>
-                        <p class="text-xs text-slate-400 mt-4">Last updated: June 2026</p>`;
-            } else if (type === 'disclaimer') {
-                html = `<h3 class="text-2xl font-semibold mb-4">Terms and Conditions</h3>
-                        <p class="text-sm text-slate-300 mb-4">By using this website and its tools, you agree to the following terms:</p>
-                        <h4 class="font-semibold mt-4 mb-2">1. Educational Purpose Only</h4>
-                        <p class="text-sm text-slate-300 mb-3">All tools on this website are for educational and learning purposes only.</p>
-                        <h4 class="font-semibold mt-4 mb-2">2. Not Professional Advice</h4>
-                        <p class="text-sm text-slate-300 mb-3">The information and results provided here are not professional or technical advice.</p>
-                        <h4 class="font-semibold mt-4 mb-2">3. Your Responsibility</h4>
-                        <p class="text-sm text-slate-300 mb-3">You are responsible for verifying all results yourself.</p>
-                        <h4 class="font-semibold mt-4 mb-2">4. No Liability</h4>
-                        <p class="text-sm text-slate-300 mb-3">We are not responsible for any loss or damage caused by the use of this website or its tools.</p>
-                        <p class="text-xs text-slate-400 mt-4">Last updated: June 2026</p>`;
-            }
-            content.innerHTML = html + `<button onclick="document.getElementById('footer-modal').close()" class="mt-6 text-sm text-cyan-400">Close</button>`;
-            modal.showModal();
-        }
-<!-- Test deployment -->
-        function runScan(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Scan complete. 3 vulnerable algorithms found.</div>`; }
-        function generateRoadmap(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Your 12-month PQC Migration Roadmap has been generated.</div>`; }
-        function compareAlgorithms(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Hybrid approach (Kyber + Dilithium) is recommended.</div>`; }
-        function testHybridTLS(btn) { btn.outerHTML = `<div class="mt-4 p-4 bg-slate-800 rounded-2xl text-sm">Hybrid TLS configuration test passed!</div>`; }
-    </script>
-</body>
+	</body>
 </html>

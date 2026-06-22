@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Salunkhe | Operator Profile & Qualifications</title>
+    <style>
+        :root {
+            --bg: #0a0f1d;
+            --card: #131c31;
+            --neon: #00ff66;
+            --math-orange: #ffaa00;
+            --text-main: #e2e8f0;
+            --text-muted: #8892b0;
+            --border: rgba(0, 255, 102, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* ===== PROFILE BRANDING HEADER ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .brand-title {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .brand-title span { color: var(--neon); }
+        .tagline { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+        .back-home-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 170, 0, 0.4);
+            color: var(--math-orange);
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(255, 170, 0, 0.1);
+            box-shadow: 0 0 12px rgba(255, 170, 0, 0.2);
+        }
+
+        /* ===== MAIN PROFILE MATRIX CARD ===== */
+        .profile-matrix {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 4px solid var(--neon);
+            border-radius: 4px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        .section-tag {
+            color: var(--neon);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .profile-title {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .profile-title span {
+            color: var(--math-orange);
+        }
+
+        .bio-para {
+            color: var(--text-main);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* ===== SPECIFICATION METRICS VIEW ===== */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 500px) {
+            .spec-grid { grid-template-columns: 1fr; }
+        }
+
+        .spec-block {
+            background: rgba(6, 10, 20, 0.5);
+            border: 1px solid rgba(255,255,255,0.02);
+            padding: 25px;
+            border-radius: 4px;
+        }
+
+        .block-header {
+            font-size: 0.9rem;
+            color: var(--math-orange);
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed rgba(255, 170, 0, 0.2);
+            padding-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .spec-table tr {
+            border-bottom: 1px solid rgba(255,255,255,0.02);
+        }
+
+        .spec-table tr:last-child {
+            border-bottom: none;
+        }
+
+        .spec-table td {
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .spec-table td.label {
+            color: var(--text-muted);
+            width: 45%;
+            font-weight: bold;
+        }
+
+        .spec-table td.value {
+            color: #fff;
+            text-align: right;
+        }
+
+        .tech-list {
+            list-style-type: none;
+            padding-top: 5px;
+        }
+
+        .tech-list li {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .tech-list li::before {
+            content: "[>]";
+            position: absolute;
+            left: 0;
+            color: var(--neon);
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.15);
+            border-top: 1px solid rgba(255,255,255,0.02);
+            padding-top: 20px;
+            margin-top: 40px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ===== BRANDING HEADER ===== -->
+    <header>
+        <div>
+            <div class="brand-title">CORE<span>_PROFILE</span></div>
+            <div class="tagline">Identity Verification & Technical Capabilities Matrix.</div>
+        </div>
+        <a href="index.html" class="back-home-btn">← Back to Lab Home</a>
+    </header>
+
+    <!-- ===== MAIN IDENTITY CONTENT ===== -->
+    <div class="profile-matrix">
+        <div class="section-tag">Identity Log // System Operator</div>
+        <h2 class="profile-title">Ajay Salunkhe <span>[ Ethical Hacker ]</span></h2>
+        
+        <p class="bio-para">
+            I am a professional, certified cybersecurity specialist and infrastructure penetration tester. My primary operational methodology involves executing defensive strategy research, conducting vulnerability evaluation scans, and auditing communication protocols to secure digital properties against exploitation vectors.
+        </p>
+
+        <p class="bio-para">
+            By analyzing complex network logic environments and processing system diagnostic tracking variables, I specialize in designing client-side automation sandboxes and customized security extension frameworks. I manipulate infrastructure controls from a purely security-driven paradigm to guarantee stability under high-risk conditions.
+        </p>
+
+        <!-- ===== TECHNICAL CAPABILITIES GRID ===== -->
+        <div class="spec-grid">
+            
+            <!-- SPEC BLOCK 1: CORE CREDENTIALS -->
+            <div class="spec-block">
+                <div class="block-header">01 // CORE CREDENTIALS</div>
+                <table class="spec-table">
+                    <tr>
+                        <td class="label">Primary Role</td>
+                        <td class="value">Ethical Hacker</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Specialization</td>
+                        <td class="value">Network Infrastructure Defense</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Certification Track</td>
+                        <td class="value">CEH (Ethical Hacker Context)</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Research Domain</td>
+                        <td class="value">Vulnerability Assessment</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- SPEC BLOCK 2: SYSTEM CAPABILITIES -->
+            <div class="spec-block">
+                <div class="block-header">02 // CORE VECTOR COMPETENCIES</div>
+                <ul class="tech-list">
+                    <li>Advanced Protocol Handshake Vulnerability Audits</li>
+                    <li>Client-Side Environmental Runtime Telemetry Checking</li>
+                    <li>Local Network Socket & Gateway Interface Interception</li>
+                    <li>Automated Structural Data Report Compilation (.JSON)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        SECURE PROFILE LOG // AUTHENTICATION CONFIRMED VIA CLIENT SITE HOOKS // IDENTITY REGISTERED.
+    </footer>
+</div>
+
+</body>
+</html>

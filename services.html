@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Salunkhe | Cyber Security Service Tiers</title>
+    <style>
+        :root {
+            --bg: #0a0f1d;
+            --card: #131c31;
+            --neon: #00ff66;
+            --math-orange: #ffaa00;
+            --text-main: #e2e8f0;
+            --text-muted: #8892b0;
+            --border: rgba(255, 170, 0, 0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: monospace; }
+        body { background-color: var(--bg); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; flex: 1; }
+
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 20px; margin-bottom: 40px; }
+        .brand-title { color: #fff; font-size: 1.4rem; font-weight: bold; letter-spacing: 2px; }
+        .brand-title span { color: var(--math-orange); }
+        .tagline { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+        .back-home-btn { background: transparent; border: 1px solid var(--neon); color: var(--neon); padding: 8px 16px; border-radius: 4px; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s ease; }
+        .back-home-btn:hover { background: rgba(0, 255, 102, 0.1); box-shadow: 0 0 12px rgba(0, 255, 102, 0.2); }
+
+        .mobile-tabs { display: none; justify-content: center; gap: 10px; margin-bottom: 30px; background: rgba(19, 28, 49, 0.6); padding: 8px; border-radius: 6px; }
+        .tab-trigger { background: transparent; border: none; color: var(--text-muted); padding: 12px 16px; font-weight: bold; font-size: 0.85rem; cursor: pointer; flex: 1; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; }
+        .tab-trigger.active { background: var(--math-orange); color: #0a0f1d; }
+
+        .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px; }
+        .tier-card { background: var(--card); border: 1px solid rgba(255, 255, 255, 0.03); border-top: 4px solid var(--text-muted); border-radius: 4px; padding: 35px 25px; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .tier-card.featured-tier { border-top-color: var(--math-orange); background: linear-gradient(180deg, var(--card) 0%, #16223d 100%); }
+        .tier-card.elite-tier { border-top-color: var(--neon); }
+
+        .tier-header { margin-bottom: 25px; border-bottom: 1px dashed rgba(255,255,255,0.05); padding-bottom: 15px; }
+        .tier-id { font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px; }
+        .featured-tier .tier-id { color: var(--math-orange); }
+        .elite-tier .tier-id { color: var(--neon); }
+        .tier-name { font-size: 1.3rem; color: #fff; font-weight: bold; margin-bottom: 10px; }
+        .tier-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+
+        .features-list { list-style-type: none; margin-bottom: 35px; flex: 1; }
+        .features-list li { font-size: 0.85rem; color: var(--text-main); margin-bottom: 14px; padding-left: 20px; position: relative; line-height: 1.4; }
+        .features-list li::before { content: "[•]"; position: absolute; left: 0; color: var(--text-muted); }
+        .featured-tier .features-list li::before { color: var(--math-orange); }
+        .elite-tier .features-list li::before { color: var(--neon); }
+
+        .tier-footer { border-top: 1px dashed rgba(255,255,255,0.05); padding-top: 20px; text-align: center; }
+        .cost-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+        .cost-value { font-size: 0.95rem; font-weight: bold; color: #fff; }
+
+        footer { text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.15); border-top: 1px solid rgba(255,255,255,0.02); padding-top: 20px; }
+
+        @media (max-width: 900px) {
+            .mobile-tabs { display: flex; }
+            .tiers-grid { grid-template-columns: 1fr; }
+            .tier-card { display: none; }
+            .tier-card.active-mobile-view { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div>
+            <div class="brand-title">SECURITY<span>_TIERS</span></div>
+            <div class="tagline">Scalable Vulnerability Assessments & Cyber Defense Operations.</div>
+        </div>
+        <a href="index.html" class="back-home-btn">← Back to Lab Home</a>
+    </header>
+
+    <div class="mobile-tabs">
+        <button class="tab-trigger active" onclick="switchMobileTier(0, this)">Standard</button>
+        <button class="tab-trigger" onclick="switchMobileTier(1, this)">Advanced</button>
+        <button class="tab-trigger" onclick="switchMobileTier(2, this)">Elite</button>
+    </div>
+
+    <div class="tiers-grid" id="master-tiers-grid">
+        <div class="tier-card active-mobile-view" id="tier-0">
+            <div class="tier-header">
+                <div class="tier-id">TIER_01 // BASELINE</div>
+                <div class="tier-name">Standard Defense</div>
+                <p class="tier-desc">Focused on external perimeter diagnostics and critical vulnerability identification for light applications.</p>
+            </div>
+            <ul class="features-list">
+                <li>Automated Vulnerability Assessment scanning to identify server misconfigurations.</li>
+                <li>Targeted OWASP Top 10 Core Security Auditing (SQLi, XSS vectors).</li>
+                <li>SSL/TLS Certificate & Transport Layer Encryption Verification.</li>
+            </ul>
+            <div class="tier-footer"><div class="cost-label">Service Core Cost</div><div class="cost-value">Evaluated post-architectural web scope inspection</div></div>
+        </div>
+
+        <div class="tier-card featured-tier" id="tier-1">
+            <div class="tier-header">
+                <div class="tier-id">TIER_02 // RECOMMENDED</div>
+                <div class="tier-name">Advanced Protocol</div>
+                <p class="tier-desc">An intensive security architecture review designed for dynamic web apps and enterprise systems.</p>
+            </div>
+            <ul class="features-list">
+                <li>Full Integration of Tier 01 Baseline Automated Verification Loops.</li>
+                <li>Manual Web Application Penetration Testing (Real-world attacker simulation).</li>
+                <li>Network & Cloud Hosting Layer Audit (AWS/DigitalOcean tracking).</li>
+                <li>API Endpoint Authentication Audits against unauthorized data leaks.</li>
+            </ul>
+            <div class="tier-footer"><div class="cost-label">Service Core Cost</div><div class="cost-value">Evaluated post-architectural web scope inspection</div></div>
+        </div>
+
+        <div class="tier-card elite-tier" id="tier-2">
+            <div class="tier-header">
+                <div class="tier-id">TIER_03 // CRITICAL</div>
+                <div class="tier-name">Elite Resilience</div>
+                <p class="tier-desc">Full-spectrum offensive security assessment engineered for enterprise database architectures.</p>
+            </div>
+            <ul class="features-list">
+                <li>Full Integration of Tier 02 Comprehensive Security Measures.</li>
+                <li>Line-by-Line Static Source Code Review to parse deep backend backdoors.</li>
+                <li>DDoS / DoS Stress Simulations to verify server resource stability bounds.</li>
+                <li>Detailed Executive Patching Report with step-by-step developer remediation logic.</li>
+            </ul>
+            <div class="tier-footer"><div class="cost-label">Service Core Cost</div><div class="cost-value">Evaluated post-architectural web scope inspection</div></div>
+        </div>
+    </div>
+
+    <footer>SECURE COMMERCIAL SERVICES DEPLOYMENT // INFRALAB LOCKED.</footer>
+</div>
+
+<script>
+    function switchMobileTier(tierIndex, tabElement) {
+        const triggers = document.querySelectorAll('.tab-trigger'); triggers.forEach(btn => btn.classList.remove('active'));
+        const cards = document.querySelectorAll('.tier-card'); cards.forEach(card => card.classList.remove('active-mobile-view'));
+        tabElement.classList.add('active'); document.getElementById(`tier-${tierIndex}`).classList.add('active-mobile-view');
+    }
+</script>
+</body>
+</html>

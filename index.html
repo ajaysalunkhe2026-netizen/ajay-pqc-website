@@ -1,137 +1,495 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>PQC Migration | Architect</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ajay Salunkhe | Cyber Security Lab</title>
 
-		<!-- Header -->
-			<header id="header">
-				<h1><a href="#">PQC Architect</a></h1>
-				<nav>
-					<ul>
-						<li><a href="#intro">Home</a></li>
-						<li><a href="#one">Services</a></li>
-						<li><a href="#two">About Me</a></li>
-						<li><a href="#pqc-tool">Free Tool</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</nav>
-			</header>
+<style>
+:root{
+    --bg:#0a0f1d;
+    --neon:#00ff66;
+    --card:#131c31;
+    --text:#e2e8f0;
+    --math-orange: #ffaa00;
+}
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2>Post-Quantum Cryptography</h2>
-					</header>
-					<p>Quantum-safe migration ke liye expert consulting.<br>
-					Hybrid PQC, Crypto-agility &amp; TLS Migration.</p>
-					<footer>
-						<a href="#one" class="button style2 down">Services</a>
-					</footer>
-				</div>
-			</section>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:monospace;
+}
 
-		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>What I Do</h2>
-					</header>
-					<p>Post-Quantum Cryptography migration, TLS assessment, crypto-agility implementation aur enterprise level PQC consulting.</p>
-				</div>
-				<a href="#two" class="button style2 down anchored">Next</a>
-			</section>
+body{
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
 
-		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
-				<div class="content box style2">
-					<header>
-						<h2>Who I Am</h2>
-					</header>
-					<p>Experienced architect specializing in Post-Quantum Cryptography migration for organizations preparing for quantum threats.</p>
-				</div>
-				<a href="#pqc-tool" class="button style2 down anchored">Try Free Tool</a>
-			</section>
+/* ===== PREMIUM SHIELD HEADER ===== */
+header{
+    position:fixed;
+    width:100%;
+    background:rgba(10, 15, 29, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    z-index:1000;
+    backdrop-filter: blur(10px);
+}
 
-		<!-- PQC Tool -->
-			<section id="pqc-tool" class="main style3 secondary">
-				<div class="content container">
-					<header>
-						<h2>Free PQC Risk Assessment</h2>
-						<p>Apni website ka quantum risk check karo</p>
-					</header>
-					<div style="max-width: 600px; margin: 0 auto;">
-						<input type="text" id="domain" placeholder="yourwebsite.com" style="width:100%; padding:15px; font-size:18px; border:2px solid #ddd; border-radius:8px; margin-bottom:20px;">
-						<button onclick="checkPQC()" style="width:100%; padding:16px; background:#0066cc; color:white; font-size:18px; border:none; border-radius:8px;">Check Quantum Risk</button>
-						<div id="pqc-result" style="margin-top:30px; padding:25px; background:white; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); display:none;"></div>
-					</div>
-				</div>
-			</section>
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px 10%;
+    height: 75px;
+}
 
-		<!-- Contact -->
-			<section id="contact" class="main style3 secondary">
-				<div class="content">
-					<header>
-						<h2>Get In Touch</h2>
-						<p>PQC migration ke liye baat karein.</p>
-					</header>
-					<div class="box">
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field half"><input type="text" name="name" placeholder="Name" /></div>
-								<div class="field half"><input type="email" name="email" placeholder="Email" /></div>
-								<div class="field"><textarea name="message" placeholder="Message" rows="6"></textarea></div>
-							</div>
-							<ul class="actions special">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</div>
-				</div>
-			</section>
+.logo{
+    color:var(--neon);
+    font-weight:bold;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+}
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-				</ul>
-				<ul class="menu">
-					<li>&copy; PQC Architect</li>
-				</ul>
-			</footer>
+.shield-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 255, 102, 0.04);
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+.shield-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 102, 0.15), transparent);
+    animation: laser-sweep 4s infinite linear;
+}
 
-		<script>
-		function checkPQC() {
-			let domain = document.getElementById('domain').value.trim();
-			if (!domain) {
-				alert("Domain daalo");
-				return;
-			}
-			document.getElementById('pqc-result').style.display = 'block';
-			document.getElementById('pqc-result').innerHTML = `
-				<h3>${domain} ka Report</h3>
-				<p><strong>Quantum Risk:</strong> HIGH</p>
-				<p>Traditional cryptography vulnerable hai. Hybrid PQC migration ki zarurat hai.</p>
-				<p><a href="#contact">Contact me for full consulting</a></p>
-			`;
-		}
-		</script>
+.status-indicator {
+    width: 7px;
+    height: 7px;
+    background: var(--neon);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--neon), 0 0 12px var(--neon);
+    animation: status-pulse 1.8s infinite ease-in-out;
+}
 
-	</body>
+.status-text { color: #8892b0; }
+.status-value { color: var(--neon); font-weight: bold; }
+
+/* SECTIONS */
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding: 60px 20px;
+}
+
+/* CYBER SECURITY QUOTE CONTAINER */
+.quote-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    max-width: 90%;
+    text-align: center;
+}
+
+.cyber-quote {
+    font-size: clamp(24px, 5vw, 45px);
+    color: var(--neon);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 35px;
+    background: var(--neon);
+    margin-left: 8px;
+    animation: blink 0.7s infinite;
+}
+
+/* ===== HIGH-TECH UTILITY PORTAL BOARD ===== */
+.portal-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    align-items: center;
+}
+
+.tool-portal-box {
+    background: linear-gradient(135deg, rgba(19, 28, 49, 0.9), rgba(10, 15, 29, 0.9));
+    border: 1px dashed rgba(255, 255, 255, 0.05);
+    padding: 35px;
+    border-radius: 6px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.tool-portal-box:hover {
+    transform: translateY(-2px);
+}
+
+.tool-portal-box.orange-accent { border-top: 3px solid var(--math-orange); }
+.tool-portal-box.neon-accent { border-top: 3px solid var(--neon); }
+
+.tool-portal-box::before {
+    content: 'CORE MODULE';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #16223d;
+    color: #8892b0;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tool-portal-box.orange-accent::before { color: var(--math-orange); }
+.tool-portal-box.neon-accent::before { color: var(--neon); }
+
+.tool-portal-box h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.tool-portal-box p {
+    color: #8892b0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.portal-link-btn {
+    display: inline-block;
+    background: transparent;
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.orange-accent .portal-link-btn {
+    color: var(--math-orange);
+    border: 2px solid var(--math-orange);
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.05);
+}
+
+.orange-accent .portal-link-btn:hover {
+    background: var(--math-orange);
+    color: #0a0f1d;
+    box-shadow: 0 0 20px var(--math-orange);
+}
+
+.neon-accent .portal-link-btn {
+    color: var(--neon);
+    border: 2px solid var(--neon);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
+}
+
+.neon-accent .portal-link-btn:hover {
+    background: var(--neon);
+    color: #0a0f1d;
+    box-shadow: 0 0 20px var(--neon);
+}
+
+/* ULTRA LIGHT DAMAGE EFFECT ON SCROLL */
+.crack{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:url('https://i.imgur.com/3QyZ6.jpg') center/cover;
+    opacity:0;
+    pointer-events:none;
+    mix-blend-mode:overlay;
+    z-index: 999;
+    transition: opacity 0.1s ease;
+}
+
+body.damage .crack{ opacity: 0.15; }
+
+/* ===== PREMIUM FOOTER WITH FOOTNOTE LINKS ===== */
+footer {
+    padding: 30px 10%;
+    background: #060a14;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    position: relative;
+    z-index: 1000;
+}
+
+.footer-credits {
+    font-size: 0.85rem;
+    color: #8892b0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.f-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+    border-radius: 4px;
+}
+
+.f-btn:hover {
+    color: var(--neon);
+    border-color: var(--neon);
+    background: rgba(0, 255, 102, 0.04);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.15);
+}
+
+/* ===== FUNNY CYBER-BUG CANVAS ===== */
+#bug-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes status-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes laser-sweep {
+    0% { left: -100%; }
+    30% { left: 150%; }
+    100% { left: 150%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">[ AJAY SALUNKHE ]</div>
+    <div class="shield-badge">
+        <div class="status-indicator"></div>
+        <span class="status-text">SHIELD_STATUS:</span>
+        <span class="status-value">ACTIVE</span>
+    </div>
+</nav>
+</header>
+
+<div class="crack"></div>
+
+<!-- Interactive Cyber Bug Layer -->
+<canvas id="bug-canvas"></canvas>
+
+<!-- HERO TYPING SECTION -->
+<section>
+    <div class="quote-container">
+        <div class="cyber-quote" id="typing-quote"></div>
+        <span class="cursor"></span>
+    </div>
+    <p style="color: #8892b0; margin-top: 15px;">[ Security Core Operational // Scroll Down To View Utilities ]</p>
+</section>
+
+<!-- MAIN HUB MULTI-PORTAL INTERFACE -->
+<section style="min-height: 80vh; padding-top: 0;">
+    <div class="portal-wrapper">
+        
+        <!-- PORTAL INTERFACE 1: SYSPULSE INVENTORY SCANNER -->
+        <div class="tool-portal-box orange-accent">
+            <h3>📊 SYSPULSE // LOCAL ASSET ENGINE</h3>
+            <p>Deploy a localized web-interface runtime scan to instantly build an infrastructure inventory parameters grid including logic processors, memory heap scale, and active device IPs securely with zero local configurations.</p>
+            <a href="syspulse.html" class="portal-link-btn">Launch SysPulse Engine</a>
+        </div>
+
+        <!-- PORTAL INTERFACE 2: PROFESSIONAL VAPT SECURITY TIERS -->
+        <div class="tool-portal-box neon-accent">
+            <h3>🛡️ DEFENSTRAT // PROFESSIONAL SECURITY SERVICES</h3>
+            <p>Explore specialized cyber-defense packages covering advanced web vulnerability mapping, intensive penetration testing simulations, API protocol audits, and source code review deployments.</p>
+            <a href="services.html" class="portal-link-btn">View Service Tiers</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== PREMIUM FOOTER VIA STANDALONE ROUTING NOOPS ===== -->
+<footer>
+    <div class="footer-credits">
+        &copy; 2026 AJAY SALUNKHE | DEFENSE LAB
+    </div>
+    <div class="footer-links">
+        <button class="f-btn" onclick="window.location.href='about.html'">About Me</button>
+        <button class="f-btn" onclick="window.location.href='privacy.html'">Privacy Policy</button>
+    </div>
+</footer>
+
+<script>
+// ===== TAGLINE TYPEWRITER EFFECT =====
+const targetQuote = "THE BEST DEFENSE IS A GOOD OFFENSE.";
+const quoteElement = document.getElementById("typing-quote");
+let index = 0;
+
+function typeWriter() {
+    if (index < targetQuote.length) {
+        quoteElement.innerHTML += targetQuote.charAt(index);
+        index++;
+        setTimeout(typeWriter, 80); 
+    }
+}
+window.onload = typeWriter;
+
+// ===== LIGHT SCROLL DAMAGE TRIGGER =====
+let t;
+let isCooldown = false;
+
+function triggerScrollEffect(){
+    if (isCooldown) return; 
+    isCooldown = true;
+    document.body.classList.add("damage");
+    clearTimeout(t);
+    t = setTimeout(() => {
+        document.body.classList.remove("damage");
+        isCooldown = false; 
+    }, 120); 
+}
+window.addEventListener("scroll", triggerScrollEffect);
+
+// ===== CURSOR-CHASING CYBER BUG RUNTIME ENGINE (SLEEK & MINIMAL) =====
+const canvas = document.getElementById("bug-canvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let bug = {
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    vx: 0, vy: 0, 
+    speed: 0.06, 
+    friction: 0.85, 
+    size: 3.5, 
+    angle: 0
+};
+
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+window.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
+window.addEventListener("touchmove", (e) => {
+    if(e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+    }
+});
+
+function drawBug() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let dx = mouse.x - bug.x;
+    let dy = mouse.y - bug.y;
+    let distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance > 5) {
+        bug.vx += dx * bug.speed;
+        bug.vy += dy * bug.speed;
+    } else {
+        bug.vx += (Math.random() - 0.5) * 2;
+        bug.vy += (Math.random() - 0.5) * 2;
+    }
+
+    bug.vx *= bug.friction;
+    bug.vy *= bug.friction;
+    bug.x += bug.vx;
+    bug.y += bug.vy;
+    bug.angle = Math.atan2(dy, dx);
+
+    ctx.save();
+    ctx.translate(bug.x, bug.y);
+    ctx.rotate(bug.angle);
+
+    ctx.strokeStyle = "#ff0055"; 
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(5, -2); ctx.lineTo(9, -4); 
+    ctx.moveTo(5, 2); ctx.lineTo(9, 4);   
+    ctx.stroke();
+
+    ctx.fillStyle = "#00ff66";
+    ctx.shadowBlur = 6; 
+    ctx.shadowColor = "#00ff66";
+    ctx.beginPath();
+    ctx.ellipse(0, 0, bug.size * 1.4, bug.size, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = "#00ff66";
+    ctx.lineWidth = 1.2;
+    let legWiggle = Math.sin(Date.now() * 0.05) * 2.5; 
+    
+    ctx.beginPath();
+    ctx.moveTo(2, -3); ctx.lineTo(4 + legWiggle, -7);
+    ctx.moveTo(2, 3); ctx.lineTo(4 - legWiggle, 7);
+    ctx.moveTo(-2, -3); ctx.lineTo(-4 - legWiggle, -6);
+    ctx.moveTo(-2, 3); ctx.lineTo(-4 + legWiggle, 6);
+    ctx.stroke();
+
+    ctx.restore();
+    requestAnimationFrame(drawBug);
+}
+drawBug();
+</script>
+
+</body>
 </html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SysPulse Core | Infrastructure Inventory Scanner</title>
+    <style>
+        :root {
+            --bg: #0a0f1d;
+            --card: #131c31;
+            --neon: #00ff66;
+            --math-orange: #ffaa00;
+            --text-main: #e2e8f0;
+            --text-muted: #8892b0;
+            --border: rgba(255, 170, 0, 0.15);
+            --danger: #ff3366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            flex: 1;
+        }
+
+        /* ===== TOOL BRANDING HEADER ===== */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px dashed var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+
+        .brand-title {
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .brand-title span { color: var(--math-orange); }
+        .tagline { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+        .back-home-btn {
+            background: transparent;
+            border: 1px solid rgba(0, 255, 102, 0.4);
+            color: var(--neon);
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+        }
+
+        .back-home-btn:hover {
+            background: rgba(0, 255, 102, 0.1);
+            box-shadow: 0 0 12px rgba(0, 255, 102, 0.2);
+        }
+
+        /* ===== CONTROL MATRIX BOARD ===== */
+        .control-board {
+            background: var(--card);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 4px solid var(--math-orange);
+            border-radius: 4px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        .control-board p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scan-btn {
+            background: var(--math-orange);
+            color: #0a0f1d;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .scan-btn:hover {
+            background: #e09500;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .hotkey-hint {
+            margin-top: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+        .hotkey-hint kbd {
+            background: #070b14; padding: 2px 6px; border: 1px solid rgba(255,255,255,0.1); border-radius: 3px; color: var(--math-orange);
+        }
+
+        /* ===== CONSOLE TERMINAL LOADING EFFECT ===== */
+        .log-terminal {
+            background: #060a14;
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.85rem;
+            color: var(--neon);
+            display: none;
+            max-height: 160px;
+            overflow-y: auto;
+            text-align: left;
+        }
+
+        /* ===== DYNAMIC SUMMARY CARDS GRID ===== */
+        .summary-wrapper {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: var(--card);
+            border-left: 3px solid var(--math-orange);
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .summary-card .label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
+        .summary-card .value { font-size: 1.15rem; font-weight: bold; color: #fff; }
+
+        /* ===== INVENTORY DETAILED TABLES GRID ===== */
+        .inventory-grid {
+            display: none;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) { .inventory-grid { grid-template-columns: 1fr; } }
+
+        .inventory-block { background: var(--card); border: 1px solid rgba(255,255,255,0.04); border-radius: 4px; padding: 25px; }
+        .block-title { font-size: 0.95rem; color: var(--math-orange); margin-bottom: 15px; border-bottom: 1px dashed rgba(255, 170, 0, 0.2); padding-bottom: 8px; font-weight: bold; }
+        .inventory-table { width: 100%; border-collapse: collapse; }
+        .inventory-table tr { border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .inventory-table tr:last-child { border-bottom: none; }
+        .inventory-table td { padding: 12px 0; font-size: 0.85rem; vertical-align: top; }
+        .inventory-table td.property { color: var(--text-muted); width: 42%; font-weight: bold; }
+        .inventory-table td.data-val { color: #fff; text-align: right; }
+
+        /* ===== UTILITY BUTTON BAR SECTION ===== */
+        .action-container {
+            display: none;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+            padding: 20px;
+            background: rgba(19, 28, 49, 0.4);
+            border-radius: 4px;
+        }
+
+        .action-btn {
+            background: transparent; border: 1px solid var(--math-orange); color: var(--math-orange); padding: 12px 24px; font-weight: bold; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; border-radius: 4px; transition: all 0.2s ease;
+        }
+        .action-btn:hover { background: rgba(255, 170, 0, 0.08); }
+        .action-btn.primary-action { background: rgba(0, 255, 102, 0.03); border-color: var(--neon); color: var(--neon); }
+        .action-btn.primary-action:hover { background: rgba(0, 255, 102, 0.12); }
+
+        /* ===== SYSTEM LIMITATIONS SEGMENT BOX ===== */
+        .limitations-box {
+            background: rgba(255, 51, 102, 0.01); border: 1px solid rgba(255, 51, 102, 0.12); border-left: 4px solid var(--danger); border-radius: 4px; padding: 20px 25px; margin-bottom: 20px;
+        }
+        .limitation-title { color: var(--danger); font-size: 0.9rem; font-weight: bold; margin-bottom: 12px; }
+        .limitations-box ul { list-style-type: none; }
+        .limitations-box li { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 7px; padding-left: 15px; position: relative; line-height: 1.5; }
+        .limitations-box li::before { content: "×"; position: absolute; left: 0; color: var(--danger); font-weight: bold; }
+
+        footer { text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.15); border-top: 1px solid rgba(255,255,255,0.02); padding-top: 20px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ===== BRANDING HEADER ===== -->
+    <header>
+        <div>
+            <div class="brand-title">SYS<span>PULSE</span></div>
+            <div class="tagline">Zero Prompts. Zero Installs. Immediate Infrastructure Mapping.</div>
+        </div>
+        <a href="index.html" class="back-home-btn">← Back to Lab Home</a>
+    </header>
+
+    <!-- ===== TRIGGER COMPONENT CARD ===== -->
+    <div class="control-board">
+        <p>Run a localized telemetry check over internal web interface anchors to structure hardware properties, device latency nodes, and active engine states into a unified deployment report.</p>
+        <button class="scan-btn" id="trigger-scan-btn" onclick="executeSystemAudit()">Scan My System</button>
+        <div class="hotkey-hint">Or press <kbd>S</kbd> key on your keyboard to trigger command</div>
+    </div>
+
+    <!-- ===== TERMINAL ACTIVITY DECK ===== -->
+    <div class="log-terminal" id="log-terminal"></div>
+
+    <!-- ===== INSTANT HIGH-LEVEL OVERVIEW CARDS ===== -->
+    <div class="summary-wrapper" id="summary-deck">
+        <div class="summary-card">
+            <div class="label">Platform OS</div>
+            <div class="value" id="card-os">Detecting...</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Core Threads</div>
+            <div class="value" id="card-cores">0 Threads</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Local Network Node</div>
+            <div class="value" id="card-ip">Routing...</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Gateway RTT</div>
+            <div class="value" id="card-latency">0 ms</div>
+        </div>
+    </div>
+
+    <!-- ===== DETAILED CLASSIFIED ARCHITECTURE PANELS ===== -->
+    <div class="inventory-grid" id="details-grid">
+        <!-- BLOCK 1: HARDWARE CORE -->
+        <div class="inventory-block">
+            <div class="block-title">01 // HARDWARE LAYER CORE</div>
+            <table class="inventory-table">
+                <tr><td class="property">Operating System</td><td class="data-val" id="val-os">Loading...</td></tr>
+                <tr><td class="property">CPU Core Density</td><td class="data-val" id="val-cores">Loading...</td></tr>
+                <tr><td class="property">RAM Allocation Limit</td><td class="data-val" id="val-ram">Loading...</td></tr>
+                <tr><td class="property">Graphics Controller</td><td class="data-val" id="val-gpu">Loading...</td></tr>
+            </table>
+        </div>
+
+        <!-- BLOCK 2: NETWORK INTERFACE -->
+        <div class="inventory-block">
+            <div class="block-title">02 // NETWORK INTERFACE NODE</div>
+            <table class="inventory-table">
+                <tr><td class="property">Local Interface IP</td><td class="data-val" id="val-ip" style="color:var(--math-orange);">Resolving...</td></tr>
+                <tr><td class="property">Estimated Downlink</td><td class="data-val" id="val-downlink">Loading...</td></tr>
+                <tr><td class="property">Network RTT Latency</td><td class="data-val" id="val-rtt">Loading...</td></tr>
+                <tr><td class="property">Transport Scheme</td><td class="data-val" id="val-scheme">Client-Side WebRTC</td></tr>
+            </table>
+        </div>
+
+        <!-- BLOCK 3: BROWSER DIAGNOSTICS -->
+        <div class="inventory-block">
+            <div class="block-title">03 // ENGINE & DISPLAY SPECIFICATIONS</div>
+            <table class="inventory-table">
+                <tr><td class="property">Browser Application</td><td class="data-val" id="val-browser">Loading...</td></tr>
+                <tr><td class="property">Engine Production Version</td><td class="data-val" id="val-version" style="word-break: break-all; font-size:0.75rem;">Loading...</td></tr>
+                <tr><td class="property">Screen Base Coordinates</td><td class="data-val" id="val-resolution">Loading...</td></tr>
+                <tr><td class="property">Pixel Color Depth</td><td class="data-val" id="val-color">Loading...</td></tr>
+            </table>
+        </div>
+
+        <!-- BLOCK 4: OPERATIONAL LIVE STATE -->
+        <div class="inventory-block">
+            <div class="block-title">04 // LIVE STATE POWER ANALYSIS</div>
+            <table class="inventory-table">
+                <tr><td class="property">Power Percentage</td><td class="data-val" id="val-battery-lvl">Loading...</td></tr>
+                <tr><td class="property">Charging Pipeline State</td><td class="data-val" id="val-battery-state">Loading...</td></tr>
+                <tr><td class="property">Estimated Runtime Remaining</td><td class="data-val" id="val-battery-time">Loading...</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===== UTILITY BUTTON BAR SECTION ===== -->
+    <div class="action-container" id="action-deck">
+        <button class="action-btn" onclick="resetAndScanAgain()">Scan Again</button>
+        <button class="action-btn" onclick="copyInventoryToClipboard()">Copy JSON to Clipboard</button>
+        <button class="action-btn primary-action" onclick="exportInventoryJSON()">Export Structural JSON (.json)</button>
+    </div>
+
+    <!-- ===== SYSTEM LIMITATIONS SEGMENT BOX ===== -->
+    <div class="limitations-box">
+        <div class="limitation-title">⚙️ SECURITY BOUNDARY & TELEMETRY LIMITATIONS:</div>
+        <ul>
+            <li>Detailed RAM Hardware Profiling (Physical modules layout, manufacturer speed bounds, DDR mapping) is restricted by browser security policies.</li>
+            <li>Physical Screen Refresh Frequencies (60Hz, 144Hz vertical refresh tracks) cannot be accurately evaluated under high-security context hooks.</li>
+            <li>Core CPU temperatures, thermal scaling throttling vectors, and physical internal fan sensor channels are strictly sandboxed.</li>
+            <li>Local system user directory trees, application binary registries, or installed host software matrices are inaccessible.</li>
+            <li>Deep infrastructural network handshakes or live cryptographic TLS configuration layers cannot be extracted client-side.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    100% SECURE SANDBOX CORE LAYER // ALL EXTRACTED ATTRIBUTES PROCESS STRICTLY LOCAL ON DEVICE APPLICATION RUNTIMES // DATA TRANSMISSION PROHIBITED.
+</footer>
+
+<script>
+let globalInventoryData = {};
+let isExecuting = false;
+
+window.addEventListener('keydown', function(e) {
+    if ((e.key === 's' || e.key === 'S') && !isExecuting) {
+        executeSystemAudit();
+    }
+});
+
+function printTerminalLog(message, delay) {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            const term = document.getElementById("log-terminal");
+            term.innerHTML += `<div>[>] ${message}</div>`;
+            term.scrollTop = term.scrollHeight;
+            resolve();
+        }, delay);
+    });
+}
+
+async function executeSystemAudit() {
+    if(isExecuting) return;
+    isExecuting = true;
+
+    const terminal = document.getElementById("log-terminal");
+    const triggerBtn = document.getElementById("trigger-scan-btn");
+    
+    triggerBtn.style.opacity = "0.5";
+    triggerBtn.innerText = "Analyzing...";
+    terminal.style.display = "block";
+    terminal.innerHTML = "";
+
+    await printTerminalLog("Initializing runtime asset inventory sequence...", 100);
+    await printTerminalLog("Requesting system architecture metadata from internal environment APIs...", 150);
+    let hardware = scanHardwareLayer();
+
+    await printTerminalLog("Binding real-time connections to identify active WebRTC interfaces...", 200);
+    resolveLocalIP(async (localIP) => {
+        await printTerminalLog(`Internal local web node resolved: ${localIP}`, 100);
+        await printTerminalLog("Parsing core browser engine builds and device display vectors...", 150);
+        let software = scanSoftwareAndDisplayLayer();
+
+        await printTerminalLog("Querying host internal power state API configurations...", 150);
+        scanBatteryState(async (batteryData) => {
+            await printTerminalLog("Consolidating system telemetry matrix variables...", 100);
+            
+            globalInventoryData = {
+                scanTimestamp: new Date().toISOString(),
+                hardwareCore: hardware,
+                networkInterface: {
+                    localIP: localIP,
+                    downlinkMbps: navigator.connection ? navigator.connection.downlink : "Unsupported",
+                    rttMs: navigator.connection ? navigator.connection.rtt : "Unsupported"
+                },
+                softwareLayer: software,
+                powerState: batteryData
+            };
+
+            await printTerminalLog("System inventory state processing complete. Rendering dashboard UI...", 150);
+            
+            setTimeout(() => {
+                terminal.style.display = "none";
+                renderDashboardData(globalInventoryData);
+                triggerBtn.style.opacity = "1";
+                triggerBtn.innerText = "Scan My System";
+                isExecuting = false;
+            }, 300);
+        });
+    });
+}
+
+function scanHardwareLayer() {
+    let os = "Unknown Platform Architecture";
+    const userAgent = navigator.userAgent;
+    if (userAgent.indexOf("Win") !== -1) os = "Windows Platform";
+    else if (userAgent.indexOf("Mac") !== -1) os = "macOS Architecture";
+    else if (userAgent.indexOf("X11") !== -1 || userAgent.indexOf("Linux") !== -1) os = "Linux Framework";
+
+    let cores = navigator.hardwareConcurrency ? `${navigator.hardwareConcurrency} Logical Processors` : "Protected Core Context";
+    let ram = "API Restricted by Host Sandbox";
+    if (performance && performance.memory) {
+        let limitGB = (performance.memory.jsHeapSizeLimit / (1024 * 1024 * 1024)).toFixed(2);
+        ram = `~${limitGB} GB max allocated JS context`;
+    }
+
+    let gpu = "Hardware Profiler Masked";
+    try {
+        const canvas = document.createElement("canvas");
+        const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+        if (gl) {
+            const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
+            if (debugInfo) { gpu = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL); }
+        }
+    } catch (e) {}
+    return { os, cores, ram, gpu };
+}
+
+function scanSoftwareAndDisplayLayer() {
+    let browserName = "Unknown Engine";
+    const ua = navigator.userAgent;
+    if (ua.indexOf("Firefox") > -1) browserName = "Mozilla Firefox";
+    else if (ua.indexOf("SamsungBrowser") > -1) browserName = "Samsung Internet";
+    else if (ua.indexOf("Opera") > -1 || ua.indexOf("OPR") > -1) browserName = "Opera Browser";
+    else if (ua.indexOf("Edge") > -1 || ua.indexOf("Edg") > -1) browserName = "Microsoft Edge";
+    else if (ua.indexOf("Chrome") > -1) browserName = "Google Chrome / Chromium";
+    else if (ua.indexOf("Safari") > -1) browserName = "Apple Safari";
+
+    let resolution = `${window.screen.width} × ${window.screen.height} Pixels`;
+    let colorDepth = `${window.screen.colorDepth}-bit vector`;
+    return { browser: browserName, version: navigator.userAgent, resolution: resolution, colorDepth: colorDepth };
+}
+
+function scanBatteryState(callback) {
+    if (navigator.getBattery) {
+        navigator.getBattery().then(function(battery) {
+            let pct = `${(battery.level * 100).toFixed(0)}%`;
+            let state = battery.charging ? "Charging Pipeline Active" : "On Battery System Discharge";
+            let remaining = "Calculated Stream State";
+            if (!battery.charging && battery.dischargingTime !== Infinity) {
+                remaining = `${(battery.dischargingTime / 60).toFixed(0)} Minutes Remaining`;
+            } else if (battery.charging && battery.chargingTime !== Infinity) {
+                remaining = `${(battery.chargingTime / 60).toFixed(0)} Minutes to Full State`;
+            } else if (battery.charging) {
+                remaining = "Pipeline Fully Maintained";
+            }
+            callback({ percentage: pct, state: state, timeEstimate: remaining });
+        }).catch(() => {
+            callback({ percentage: "Hardware Unreached", state: "Desktop Context Node", timeEstimate: "Infinite External Grid Line Power" });
+        });
+    } else {
+        callback({ percentage: "API Unsupported", state: "Interface Missing", timeEstimate: "External AC Connection Asserted" });
+    }
+}
+
+function resolveLocalIP(callback) {
+    let ipResolved = "127.0.0.1 (Local Fallback)";
+    let RTCPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+    if (!RTCPeerConnection) { callback(ipResolved); return; }
+
+    let rtc = new RTCPeerConnection({ iceServers: [] });
+    rtc.createDataChannel('', { reliable: false });
+    rtc.onicecandidate = function (evt) {
+        if (evt.candidate) {
+            let parts = evt.candidate.candidate.split(' ');
+            let ip = parts[4];
+            if (ip && (ip.indexOf('.') > -1 || ip.indexOf(':') > -1)) {
+                if(ip.endsWith('.local')) { ipResolved = "mDNS Masked (Secure Connection)"; } 
+                else { ipResolved = ip; }
+                callback(ipResolved);
+                rtc.onicecandidate = null;
+            }
+        }
+    };
+    rtc.createOffer().then(offer => rtc.setLocalDescription(offer)).catch(() => { callback(ipResolved); });
+    setTimeout(() => { if(ipResolved === "127.0.0.1 (Local Fallback)") { callback(ipResolved); } }, 800);
+}
+
+function renderDashboardData(data) {
+    document.getElementById("card-os").innerText = data.hardwareCore.os.split(" ")[0];
+    document.getElementById("card-cores").innerText = data.hardwareCore.cores.split(" ")[0] + " Cores";
+    document.getElementById("card-ip").innerText = data.networkInterface.localIP.length > 18 ? "Resolved Node" : data.networkInterface.localIP;
+    document.getElementById("card-latency").innerText = data.networkInterface.rttMs !== "Unsupported" ? `${data.networkInterface.rttMs} ms` : "N/A";
+
+    document.getElementById("val-os").innerText = data.hardwareCore.os;
+    document.getElementById("val-cores").innerText = data.hardwareCore.cores;
+    document.getElementById("val-ram").innerText = data.hardwareCore.ram;
+    document.getElementById("val-gpu").innerText = data.hardwareCore.gpu;
+
+    document.getElementById("val-ip").innerText = data.networkInterface.localIP;
+    document.getElementById("val-downlink").innerText = data.networkInterface.downlinkMbps !== "Unsupported" ? `${data.networkInterface.downlinkMbps} Mbps` : "Restricted Matrix";
+    document.getElementById("val-rtt").innerText = data.networkInterface.rttMs !== "Unsupported" ? `${data.networkInterface.rttMs} ms` : "Restricted Matrix";
+
+    document.getElementById("val-browser").innerText = data.softwareLayer.browser;
+    document.getElementById("val-version").innerText = data.softwareLayer.version;
+    document.getElementById("val-resolution").innerText = data.softwareLayer.resolution;
+    document.getElementById("val-color").innerText = data.softwareLayer.colorDepth;
+
+    document.getElementById("val-battery-lvl").innerText = data.powerState.percentage;
+    document.getElementById("val-battery-state").innerText = data.powerState.state;
+    document.getElementById("val-battery-time").innerText = data.powerState.timeEstimate;
+
+    document.getElementById("summary-deck").style.display = "grid";
+    document.getElementById("details-grid").style.display = "grid";
+    document.getElementById("action-deck").style.display = "flex";
+}
+
+function resetAndScanAgain() {
+    document.getElementById("summary-deck").style.display = "none";
+    document.getElementById("details-grid").style.display = "none";
+    document.getElementById("action-deck").style.display = "none";
+    executeSystemAudit();
+}
+
+function copyInventoryToClipboard() {
+    const jsonString = JSON.stringify(globalInventoryData, null, 4);
+    navigator.clipboard.writeText(jsonString).then(() => { alert("Inventory structured JSON ledger copied to clipboard!"); });
+}
+
+function exportInventoryJSON() {
+    const jsonString = JSON.stringify(globalInventoryData, null, 4);
+    const dataBlob = new Blob([jsonString], { type: "application/json" });
+    const downloadUrl = URL.createObjectURL(dataBlob);
+    const fileAnchor = document.createElement("a");
+    fileAnchor.href = downloadUrl;
+    fileAnchor.download = `syspulse_inventory_report_${Math.floor(Date.now() / 1000)}.json`;
+    document.body.appendChild(fileAnchor);
+    fileAnchor.click();
+    document.body.removeChild(fileAnchor);
+    URL.revokeObjectURL(downloadUrl);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Salunkhe | Privacy Policy & Data Integrity Log</title>
+    <style>
+        :root {
+            --bg: #0a0f1d;
+            --card: #131c31;
+            --neon: #00ff66;
+            --math-orange: #ffaa00;
+            --text-main: #e2e8f0;
+            --text-muted: #8892b0;
+            --border: rgba(0, 255, 102, 0.15);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: monospace; 
+        }
+        
+        body { 
+            background-color: var(--bg); 
+            color: var(--text-main); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding: 40px 20px; 
+        }
+        
+        .container { 
+            width: 100%; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            flex: 1; 
+        }
+
+        /* ===== PRIVACY BRANDING HEADER ===== */
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px dashed var(--border); 
+            padding-bottom: 20px; 
+            margin-bottom: 40px; 
+        }
+        
+        .brand-title { 
+            color: #fff; 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            letter-spacing: 2px; 
+        }
+        
+        .brand-title span { color: var(--neon); }
+        .tagline { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
+
+        .back-home-btn { 
+            background: transparent; 
+            border: 1px solid var(--math-orange); 
+            color: var(--math-orange); 
+            padding: 8px 16px; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            transition: all 0.2s ease; 
+        }
+        
+        .back-home-btn:hover { 
+            background: rgba(255, 170, 0, 0.1); 
+            box-shadow: 0 0 12px rgba(255, 170, 0, 0.2); 
+        }
+
+        /* ===== MAIN PRIVACY COMPLIANCE CARD ===== */
+        .privacy-matrix { 
+            background: var(--card); 
+            border: 1px solid rgba(255, 255, 255, 0.03); 
+            border-top: 4px solid var(--neon); 
+            border-radius: 4px; 
+            padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+        }
+        
+        .section-tag { 
+            color: var(--neon); 
+            font-size: 0.8rem; 
+            font-weight: bold; 
+            letter-spacing: 2px; 
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+        }
+        
+        .privacy-title { 
+            font-size: 1.8rem; 
+            color: #fff; 
+            margin-bottom: 25px; 
+        }
+        
+        .privacy-title span { color: var(--math-orange); }
+
+        .policy-block { margin-bottom: 30px; }
+        .block-heading { 
+            font-size: 1rem; 
+            color: var(--math-orange); 
+            font-weight: bold; 
+            margin-bottom: 12px; 
+            display: flex; 
+            align-items: center; 
+        }
+        
+        .block-heading::before { content: "[»] "; color: var(--neon); }
+        .policy-text { 
+            color: var(--text-main); 
+            font-size: 0.9rem; 
+            line-height: 1.7; 
+            text-align: justify; 
+            padding-left: 20px; 
+        }
+        
+        .integrity-alert { 
+            background: rgba(0, 255, 102, 0.02); 
+            border: 1px solid rgba(0, 255, 102, 0.15); 
+            padding: 15px 20px; 
+            border-radius: 4px; 
+            font-size: 0.85rem; 
+            color: var(--neon); 
+            margin-top: 25px; 
+        }
+
+        footer { 
+            text-align: center; 
+            font-size: 0.75rem; 
+            color: rgba(255,255,255,0.15); 
+            border-top: 1px solid rgba(255,255,255,0.02); 
+            padding-top: 20px; 
+            margin-top: 40px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- ===== BRANDING HEADER ===== -->
+    <header>
+        <div>
+            <div class="brand-title">PRIVACY<span>_CORE</span></div>
+            <div class="tagline">Data Isolation Principles & Security Assertions.</div>
+        </div>
+        <a href="index.html" class="back-home-btn">← Back to Lab Home</a>
+    </header>
+
+    <!-- ===== MAIN PRIVACY CONTENT ===== -->
+    <div class="privacy-matrix">
+        <div class="section-tag">Compliance Log // Operational Parameters</div>
+        <h2 class="privacy-title">PRIVACY_POLICY<span>.LOG</span></h2>
+        
+        <!-- PROTOCOL 1 -->
+        <div class="policy-block">
+            <div class="block-heading">01 // PURE CLIENT-SIDE SANDBOX</div>
+            <p class="policy-text">
+                All utility operations, hardware discovery metrics, and system inventory checks hosted on this domain execute entirely within the localized environment of your web browser sandbox. The parsing scripts pull host indicators using standard JavaScript APIs, ensuring no remote cloud resources are engaged during telemetry execution loops.
+            </p>
+        </div>
+
+        <!-- PROTOCOL 2 -->
+        <div class="policy-block">
+            <div class="block-heading">02 // DATA ISOLATION & NON-RETENTION</div>
+            <p class="policy-text">
+                This platform implements a strict zero-data-retention policy framework. No telemetry databases, external web tracking channels, or log aggregator networks are connected to our infrastructure utility nodes. Your infrastructure variables are never intercepted, transmitted, or logged onto remote server infrastructure.
+            </p>
+        </div>
+
+        <!-- PROTOCOL 3 -->
+        <div class="policy-block">
+            <div class="block-heading">03 // USER-CONTROLLED LOCAL ARCHIVING</div>
+            <p class="policy-text">
+                Any structured JSON document compiles on demand and stays temporary in the volatile memory space of your browser instance. External manipulation or disk persistence is avoided unless explicitly executed by the operator via the "Export Structural JSON" feature block.
+            </p>
+        </div>
+
+        <div class="integrity-alert">
+            [ASSERTION CONFIRMED]: Security systems status monitors verify full environmental privacy control. Digital data integrity parameters strictly adhere to defensive information architecture principles.
+        </div>
+    </div>
+
+    <footer>SECURE COMPLIANCE ENGINE // TIMESTAMP: SYSTEM_LIVE</footer>
+</div>
+
+</body>
+</html>

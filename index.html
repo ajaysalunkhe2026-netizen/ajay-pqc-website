@@ -154,7 +154,7 @@ section{
 .portal-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
     width: 100%;
     max-width: 800px;
     align-items: center;
@@ -229,6 +229,57 @@ section{
     color: var(--math-orange);
     border: 2px solid var(--math-orange);
     box-shadow: 0 0 10px rgba(255, 170, 0, 0.05);
+}
+
+/* TARGET RIG AFFILIATE CONTAINER PACK */
+.affiliate-image-section {
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 102, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.rig-display-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 420px;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.tool-portal-box:hover .rig-display-img {
+    filter: brightness(1);
+}
+
+/* PRECISE BUTTON PLACED UNDER THE RIG IMAGE */
+.bottom-affiliate-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid var(--neon);
+    color: var(--neon);
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.bottom-affiliate-btn:hover {
+    background: var(--neon);
+    color: #0a0f1d;
+    box-shadow: 0 0 25px var(--neon);
 }
 
 .orange-accent .portal-link-btn:hover {
@@ -318,11 +369,6 @@ footer {
 }
 
 /* ===== ANIMATIONS ===== */
-@keyframes status-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.6; }
-    50% { transform: scale(1.1); opacity: 1; }
-}
-
 @keyframes arrow-bounce {
     0%, 100% { transform: translateY(0); opacity: 0.4; }
     50% { transform: translateY(6px); opacity: 1; }
@@ -357,8 +403,10 @@ footer {
 
 <div class="crack"></div>
 
+<!-- Interactive Cyber Bug Layer -->
 <canvas id="bug-canvas"></canvas>
 
+<!-- HERO CONSOLE GRID -->
 <section id="hero-section">
     <div class="quote-container">
         <span class="cyber-quote">THE BEST DEFENSE IS A GOOD OFFENSE. TRUE CYBERSECURITY RESILIENCE REQUIRES PARSING COMPROMISE VECTORS BEFORE EXPLOITATION OCCURS. SYSTEMS ARE NOT SECURED BY WALLS, BUT BY THE RIGOROUS AUDITING OF THEIR CORE INTERFACES.</span>
@@ -370,24 +418,45 @@ footer {
     </div>
 </section>
 
-<section id="portal-section" style="min-height: 80vh; padding-top: 40px;">
+<!-- MAIN HUB MULTI-PORTAL INTERFACE -->
+<section id="portal-section" style="min-height: 100vh; padding-top: 40px;">
     <div class="portal-wrapper">
         
+        <!-- PORTAL INTERFACE 1: SYSPULSE INVENTORY SCANNER -->
         <div class="tool-portal-box orange-accent">
             <h3>📊 SYSPULSE // LOCAL ASSET ENGINE</h3>
             <p>Deploy a localized web-interface runtime scan to instantly build an infrastructure inventory parameters grid including logic processors, memory heap scale, and active device IPs securely with zero local configurations.</p>
             <a href="syspulse.html" class="portal-link-btn">Launch SysPulse Engine</a>
         </div>
 
+        <!-- PORTAL INTERFACE 2: PROFESSIONAL VAPT SECURITY TIERS -->
         <div class="tool-portal-box neon-accent">
             <h3>🛡️ DEFENSTRAT // PROFESSIONAL SECURITY SERVICES</h3>
             <p>Explore specialized cyber-defense packages covering advanced web vulnerability mapping, intensive penetration testing simulations, API protocol audits, and source code review deployments.</p>
             <a href="services.html" class="portal-link-btn">View Service Tiers</a>
         </div>
 
+        <!-- PORTAL INTERFACE 3: NEON AFFILIATE ACCESSORIES DEPOT -->
+        <div class="tool-portal-box neon-accent" style="border-top-color: var(--neon);">
+            <h3>⚡ CORE_GEAR // LATEST LAB ACCESSORIES</h3>
+            <p>Inspect multi-display production environments, mechanical logic entry devices, studio isolation headphones, and hardware security endpoints deployed at the operator's perimeter.</p>
+            
+            <!-- EXPLICIT AFFILIATE RIG DISPLAY IMAGE FRAMEWORK -->
+            <div class="affiliate-image-section">
+                <!-- Verbatim image source anchor map -->
+                <img src="9POUf.jpg" class="rig-display-img" alt="9POUf.jpg Latest Cyber Accessories Setup">
+            </div>
+
+            <!-- THE CONVERSION ROUTING ACTION BUTTON DYNAMICALLY LINKED TO YOUR AMZ LINK -->
+            <a href="https://amzn.to/4uNCKGP" target="_blank" rel="noopener noreferrer" class="bottom-affiliate-btn">
+                Access Latest Cyber Lab Accessories →
+            </a>
+        </div>
+
     </div>
 </section>
 
+<!-- ===== PREMIUM FOOTER ===== -->
 <footer>
     <div class="footer-credits">
         &copy; 2026 AJAY SALUNKHE | DEFENSE LAB
@@ -401,116 +470,39 @@ footer {
 <script>
 // ===== INTERACTIVE 3D HYDRO VECTOR DEVIATION EFFECT =====
 const dropletNode = document.getElementById("droplet-node");
-
 window.addEventListener("mousemove", (e) => {
-    // Generate slight perspective 3D shifts during tracking coordinates
     const tiltX = (window.innerHeight / 2 - e.clientY) * 0.03;
     const tiltY = (window.innerWidth / 2 - e.clientX) * 0.03;
     dropletNode.style.transform = `rotate(-45deg) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 });
 
 // ===== LIGHT SCROLL DAMAGE TRIGGER =====
-let t;
-let isCooldown = false;
-
+let t; let isCooldown = false;
 function triggerScrollEffect(){
-    if (isCooldown) return; 
-    isCooldown = true;
-    document.body.classList.add("damage");
-    clearTimeout(t);
-    t = setTimeout(() => {
-        document.body.classList.remove("damage");
-        isCooldown = false; 
-    }, 120); 
+    if (isCooldown) return; isCooldown = true;
+    document.body.classList.add("damage"); clearTimeout(t);
+    t = setTimeout(() => { document.body.classList.remove("damage"); isCooldown = false; }, 120); 
 }
 window.addEventListener("scroll", triggerScrollEffect);
 
-// ===== CURSOR-CHASING CYBER BUG RUNTIME ENGINE (SLEEK & MINIMAL) =====
-const canvas = document.getElementById("bug-canvas");
-const ctx = canvas.getContext("2d");
+// ===== CURSOR-CHASING CYBER BUG RUNTIME ENGINE =====
+const canvas = document.getElementById("bug-canvas"); const ctx = canvas.getContext("2d");
+function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+resizeCanvas(); window.addEventListener("resize", resizeCanvas);
 
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
-
-let bug = {
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
-    vx: 0, vy: 0, 
-    speed: 0.06, 
-    friction: 0.85, 
-    size: 3.5, 
-    angle: 0
-};
-
+let bug = { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, vx: 0, vy: 0, speed: 0.06, friction: 0.85, size: 3.5, angle: 0 };
 let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-
-window.addEventListener("mousemove", (e) => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-});
-
-window.addEventListener("touchmove", (e) => {
-    if(e.touches.length > 0) {
-        mouse.x = e.touches[0].clientX;
-        mouse.y = e.touches[0].clientY;
-    }
-});
+window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+window.addEventListener("touchmove", (e) => { if(e.touches.length > 0) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } });
 
 function drawBug() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    let dx = mouse.x - bug.x;
-    let dy = mouse.y - bug.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-
-    if (distance > 5) {
-        bug.vx += dx * bug.speed;
-        bug.vy += dy * bug.speed;
-    } else {
-        bug.vx += (Math.random() - 0.5) * 2;
-        bug.vy += (Math.random() - 0.5) * 2;
-    }
-
-    bug.vx *= bug.friction;
-    bug.vy *= bug.friction;
-    bug.x += bug.vx;
-    bug.y += bug.vy;
-    bug.angle = Math.atan2(dy, dx);
-
-    ctx.save();
-    ctx.translate(bug.x, bug.y);
-    ctx.rotate(bug.angle);
-
-    ctx.strokeStyle = "#ff0055"; 
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(5, -2); ctx.lineTo(9, -4); 
-    ctx.moveTo(5, 2); ctx.lineTo(9, 4);   
-    ctx.stroke();
-
-    ctx.fillStyle = "#00ff66";
-    ctx.shadowBlur = 6; 
-    ctx.shadowColor = "#00ff66";
-    ctx.beginPath();
-    ctx.ellipse(0, 0, bug.size * 1.4, bug.size, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    ctx.strokeStyle = "#00ff66";
-    ctx.lineWidth = 1.2;
-    let legWiggle = Math.sin(Date.now() * 0.05) * 2.5; 
-    
-    ctx.beginPath();
-    ctx.moveTo(2, -3); ctx.lineTo(4 + legWiggle, -7);
-    ctx.moveTo(2, 3); ctx.lineTo(4 - legWiggle, 7);
-    ctx.moveTo(-2, -3); ctx.lineTo(-4 - legWiggle, -6);
-    ctx.moveTo(-2, 3); ctx.lineTo(-4 + legWiggle, 6);
-    ctx.stroke();
-
-    ctx.restore();
-    requestAnimationFrame(drawBug);
+    ctx.clearRect(0, 0, canvas.width, canvas.height); let dx = mouse.x - bug.x; let dy = mouse.y - bug.y; let distance = Math.sqrt(dx * dx + dy * dy);
+    if (distance > 5) { bug.vx += dx * bug.speed; bug.vy += dy * bug.speed; } else { bug.vx += (Math.random() - 0.5) * 2; bug.vy += (Math.random() - 0.5) * 2; }
+    bug.vx *= bug.friction; bug.vy *= bug.friction; bug.x += bug.vx; bug.y += bug.vy; bug.angle = Math.atan2(dy, dx);
+    ctx.save(); ctx.translate(bug.x, bug.y); ctx.rotate(bug.angle);
+    ctx.strokeStyle = "#ff0055"; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(5, -2); ctx.lineTo(9, -4); ctx.moveTo(5, 2); ctx.lineTo(9, 4); ctx.stroke();
+    ctx.fillStyle = "#00ff66"; ctx.shadowBlur = 6; ctx.shadowColor = "#00ff66"; ctx.beginPath(); ctx.ellipse(0, 0, bug.size * 1.4, bug.size, 0, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "#00ff66"; ctx.lineWidth = 1.2; let legWiggle = Math.sin(Date.now() * 0.05) * 2.5; ctx.beginPath(); ctx.moveTo(2, -3); ctx.lineTo(4 + legWiggle, -7); ctx.moveTo(2, 3); ctx.lineTo(4 - legWiggle, 7); ctx.moveTo(-2, -3); ctx.lineTo(-4 - legWiggle, -6); ctx.moveTo(-2, 3); ctx.lineTo(-4 + legWiggle, 6); ctx.stroke(); ctx.restore(); requestAnimationFrame(drawBug);
 }
 drawBug();
 </script>

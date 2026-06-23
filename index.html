@@ -13,6 +13,7 @@
     --text:#e2e8f0;
     --math-orange: #ffaa00;
     --water-blue: #00bfff;
+    --research-purple: #a855f7;
 }
 
 *{
@@ -154,7 +155,7 @@ section{
 .portal-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
     width: 100%;
     max-width: 800px;
     align-items: center;
@@ -178,24 +179,25 @@ section{
 
 .tool-portal-box.orange-accent { border-top: 3px solid var(--math-orange); }
 .tool-portal-box.neon-accent { border-top: 3px solid var(--neon); }
+.tool-portal-box.purple-accent { border-top: 3px solid var(--research-purple); }
 
+/* DYNAMIC HOOK HANDLES RE-ENGINEERED */
 .tool-portal-box::before {
-    content: 'CORE MODULE';
     position: absolute;
-    top: -10px;
+    top: -11px;
     left: 20px;
     background: #16223d;
-    color: #8892b0;
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     font-weight: bold;
-    padding: 2px 8px;
-    letter-spacing: 1px;
+    padding: 3px 10px;
+    letter-spacing: 1.5px;
     border-radius: 3px;
     border: 1px solid rgba(255,255,255,0.05);
 }
 
-.tool-portal-box.orange-accent::before { color: var(--math-orange); }
-.tool-portal-box.neon-accent::before { color: var(--neon); }
+.tool-portal-box.free-tool-tag::before { content: 'TRY OUR FREE TOOL'; color: var(--math-orange); }
+.tool-portal-box.service-tag::before { content: 'TRY OUR SERVICE'; color: var(--neon); }
+.tool-portal-box.research-tag::before { content: 'SEE OUR RESEARCH'; color: var(--research-purple); }
 
 .tool-portal-box h3 {
     color: #fff;
@@ -229,6 +231,36 @@ section{
     color: var(--math-orange);
     border: 2px solid var(--math-orange);
     box-shadow: 0 0 10px rgba(255, 170, 0, 0.05);
+}
+
+.orange-accent .portal-link-btn:hover {
+    background: var(--math-orange);
+    color: #0a0f1d;
+    box-shadow: 0 0 20px var(--math-orange);
+}
+
+.neon-accent .portal-link-btn {
+    color: var(--neon);
+    border: 2px solid var(--neon);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
+}
+
+.neon-accent .portal-link-btn:hover {
+    background: var(--neon);
+    color: #0a0f1d;
+    box-shadow: 0 0 20px var(--neon);
+}
+
+.purple-accent .portal-link-btn {
+    color: var(--research-purple);
+    border: 2px solid var(--research-purple);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.05);
+}
+
+.purple-accent .portal-link-btn:hover {
+    background: var(--research-purple);
+    color: #0a0f1d;
+    box-shadow: 0 0 20px var(--research-purple);
 }
 
 /* TARGET RIG AFFILIATE CONTAINER PACK */
@@ -281,24 +313,6 @@ section{
     background: var(--neon);
     color: #0a0f1d;
     box-shadow: 0 0 25px var(--neon);
-}
-
-.orange-accent .portal-link-btn:hover {
-    background: var(--math-orange);
-    color: #0a0f1d;
-    box-shadow: 0 0 20px var(--math-orange);
-}
-
-.neon-accent .portal-link-btn {
-    color: var(--neon);
-    border: 2px solid var(--neon);
-    box-shadow: 0 0 10px rgba(0, 255, 102, 0.05);
-}
-
-.neon-accent .portal-link-btn:hover {
-    background: var(--neon);
-    color: #0a0f1d;
-    box-shadow: 0 0 20px var(--neon);
 }
 
 /* ULTRA LIGHT DAMAGE EFFECT ON SCROLL */
@@ -404,10 +418,8 @@ footer {
 
 <div class="crack"></div>
 
-<!-- Interactive Cyber Bug Layer -->
 <canvas id="bug-canvas"></canvas>
 
-<!-- HERO CONSOLE GRID -->
 <section id="hero-section">
     <div class="quote-container">
         <span class="cyber-quote">THE BEST DEFENSE IS A GOOD OFFENSE. TRUE CYBERSECURITY RESILIENCE REQUIRES PARSING COMPROMISE VECTORS BEFORE EXPLOITATION OCCURS. SYSTEMS ARE NOT SECURED BY WALLS, BUT BY THE RIGOROUS AUDITING OF THEIR CORE INTERFACES.</span>
@@ -419,35 +431,35 @@ footer {
     </div>
 </section>
 
-<!-- MAIN HUB MULTI-PORTAL INTERFACE -->
-<section id="portal-section" style="min-height: 100vh; padding-top: 40px;">
+<section id="portal-section" style="min-height: 100vh; padding-top: 40px; padding-bottom: 80px;">
     <div class="portal-wrapper">
         
-        <!-- PORTAL INTERFACE 1: SYSPULSE INVENTORY SCANNER -->
-        <div class="tool-portal-box orange-accent">
+        <div class="tool-portal-box orange-accent free-tool-tag">
             <h3>📊 SYSPULSE // LOCAL ASSET ENGINE</h3>
             <p>Deploy a localized web-interface runtime scan to instantly build an infrastructure inventory parameters grid including logic processors, memory heap scale, and active device IPs securely with zero local configurations.</p>
             <a href="syspulse.html" class="portal-link-btn">Launch SysPulse Engine</a>
         </div>
 
-        <!-- PORTAL INTERFACE 2: PROFESSIONAL VAPT SECURITY TIERS -->
-        <div class="tool-portal-box neon-accent">
+        <div class="tool-portal-box neon-accent service-tag">
             <h3>🛡️ DEFENSTRAT // PROFESSIONAL SECURITY SERVICES</h3>
             <p>Explore specialized cyber-defense packages covering advanced web vulnerability mapping, intensive penetration testing simulations, API protocol audits, and source code review deployments.</p>
             <a href="services.html" class="portal-link-btn">View Service Tiers</a>
         </div>
 
-        <!-- PORTAL INTERFACE 3: NEON AFFILIATE ACCESSORIES DEPOT -->
-        <div class="tool-portal-box neon-accent" style="border-top-color: var(--neon);">
+        <div class="tool-portal-box purple-accent research-tag">
+            <h3>🔬 CYBER INTELLIGENCE & THREAT RESEARCH</h3>
+            <p>Analyze institutional security vulnerabilities logs, emerging threat vectors vectors briefing, tactical threat mapping telemetry reports, and technical posts compiled directly from core testing sandboxes.</p>
+            <a href="research.html" class="portal-link-btn">Explore Lab Posts</a>
+        </div>
+
+        <div class="tool-portal-box neon-accent" style="border-top-color: var(--neon); margin-top: 15px;">
             <h3>⚡ CORE_GEAR // LATEST LAB ACCESSORIES</h3>
             <p>Inspect multi-display production environments, mechanical logic entry devices, studio isolation headphones, and hardware security endpoints deployed at the operator's perimeter.</p>
             
-            <!-- CODES INTEGRATE REAL-TIME DYNAMIC CLOUD REPLICA OF "9POUf.jpg" -->
             <div class="affiliate-image-section">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" class="rig-display-img" alt="9POUf.jpg High-Res Cyber Setup Proxy">
+                <img src="9POUf.jpg" class="rig-display-img" alt="9POUf.jpg Latest Cyber Accessories Setup">
             </div>
 
-            <!-- BUTTON IS DIRECTLY CONNECTED WITH AJAY'S UNIQUE AMZ AFFILIATE LINK -->
             <a href="https://amzn.to/4uNCKGP" target="_blank" rel="noopener noreferrer" class="bottom-affiliate-btn">
                 Access Latest Cyber Lab Accessories →
             </a>
@@ -456,7 +468,6 @@ footer {
     </div>
 </section>
 
-<!-- ===== PREMIUM FOOTER ===== -->
 <footer>
     <div class="footer-credits">
         &copy; 2026 AJAY SALUNKHE | DEFENSE LAB

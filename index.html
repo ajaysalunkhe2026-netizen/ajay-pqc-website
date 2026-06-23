@@ -326,18 +326,25 @@ section{
 
 body.damage .crack{ opacity: 0.15; }
 
-/* ===== PREMIUM FOOTER WITH FOOTNOTE LINKS ===== */
+/* ===== PREMIUM FOOTER WITH FOOTNOTE LINKS & SEO ROUTING MATRIX ===== */
 footer {
-    padding: 30px 10%;
+    padding: 40px 5%;
     background: #060a14;
     border-top: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    z-index: 1000;
+}
+
+.footer-top-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 15px;
-    position: relative;
-    z-index: 1000;
+    width: 100%;
 }
 
 .footer-credits {
@@ -370,6 +377,47 @@ footer {
     box-shadow: 0 0 10px rgba(0, 255, 102, 0.15);
 }
 
+/* NEW INTEGRATED SEO LINK DIRECTORY MATRIX */
+.seo-directory-matrix {
+    border-top: 1px dashed rgba(255, 255, 255, 0.04);
+    padding-top: 25px;
+    width: 100%;
+}
+
+.seo-directory-title {
+    font-size: 0.72rem;
+    color: var(--math-orange);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.seo-directory-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.seo-dir-anchor {
+    color: #8892b0;
+    text-decoration: none;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+}
+
+.seo-dir-anchor:hover {
+    color: var(--neon);
+}
+
+.seo-dir-anchor span {
+    color: var(--neon);
+    font-size: 0.7rem;
+}
+
 /* ===== CYBER-BUG CANVAS ===== */
 #bug-canvas {
     position: fixed;
@@ -393,7 +441,7 @@ footer {
 <nav>
     <div class="logo">AJAY SALUNKHE | <span>CYBER SECURITY LAB</span></div>
     
-    <!-- LINKEDIN CONNECT PANEL -->
+    <!-- LINKEDIN CONNECT MODULE -->
     <a href="https://www.linkedin.com/in/ajay-salunkhe-9a72b7406/" target="_blank" rel="noopener noreferrer" class="linkedin-connect-btn">
         <span class="linkedin-icon">in</span> CONNECT WITH ME
     </a>
@@ -448,7 +496,7 @@ footer {
             <p>Inspect multi-display production environments, mechanical logic entry devices, studio isolation headphones, and hardware security endpoints deployed at the operator's perimeter.</p>
             
             <div class="affiliate-image-section">
-                <!-- IMMUTABLE SECURE 4K LAB ACCESSORY STANDBY IMAGE -->
+                <!-- HIGH RESOLUTION IMMUTABLE WORKSTATION IMAGE -->
                 <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" class="rig-display-img" alt="Latest Cyber Accessories Setup">
             </div>
 
@@ -460,14 +508,29 @@ footer {
     </div>
 </section>
 
-<!-- ===== PREMIUM FOOTER ===== -->
+<!-- ===== PREMIUM FOOTER WITH INTEGRATED LINKS ===== -->
 <footer>
-    <div class="footer-credits">
-        &copy; 2026 AJAY SALUNKHE | DEFENSE LAB
+    <div class="footer-top-row">
+        <div class="footer-credits">
+            &copy; 2026 AJAY SALUNKHE | DEFENSE LAB
+        </div>
+        <div class="footer-links">
+            <button class="f-btn" onclick="window.location.href='about.html'">About Me</button>
+            <button class="f-btn" onclick="window.location.href='privacy.html'">Privacy Policy</button>
+        </div>
     </div>
-    <div class="footer-links">
-        <button class="f-btn" onclick="window.location.href='about.html'">About Me</button>
-        <button class="f-btn" onclick="window.location.href='privacy.html'">Privacy Policy</button>
+
+    <!-- SEO KEYWORD LINK INJECTION ENGINE -->
+    <div class="seo-directory-matrix">
+        <div class="seo-directory-title">Secure Core Research Indexes</div>
+        <div class="seo-directory-links">
+            <a href="cyber-security.html" class="seo-dir-anchor"><span>[▶]</span> What is Cyber Security?</a>
+            <a href="ethical-hacking.html" class="seo-dir-anchor"><span>[▶]</span> Access Ethical Hacking Manual</a>
+            <a href="antivirus.html" class="seo-dir-anchor"><span>[▶]</span> Deploy Antivirus Endpoint Systems</a>
+            <a href="cyber-attack.html" class="seo-dir-anchor"><span>[▶]</span> Analyze Cyber Attack Logbooks</a>
+            <a href="hacking-tools.html" class="seo-dir-anchor"><span>[▶]</span> Initialize Lab Hacking Tools</a>
+            <a href="malware.html" class="seo-dir-anchor"><span>[▶]</span> Isolate Hostile Malware Strains</a>
+        </div>
     </div>
 </footer>
 
@@ -489,7 +552,6 @@ resizeCanvas(); window.addEventListener("resize", resizeCanvas);
 let bug = { x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, vx: 0, vy: 0, speed: 0.06, friction: 0.85, size: 3.5, angle: 0 };
 let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 window.addEventListener("mousemove", (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-window.addEventListener("touchmove", (e) => { if(e.touches.length > 0) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } });
 
 function drawBug() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); let dx = mouse.x - bug.x; let dy = mouse.y - bug.y; let distance = Math.sqrt(dx * dx + dy * dy);

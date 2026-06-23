@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SentinelEdge V2.0 - Technical Breakdown</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px 20px;
+            padding: 40px;
+            background-color: #161b22;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            border-top: 4px solid #58a6ff;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .author-date {
+            color: #8b949e;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            color: #58a6ff;
+            margin-top: 30px;
+            font-size: 1.3em;
+        }
+
+        p, li {
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #238636;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .github-link:hover {
+            background-color: #2ea043;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>SentinelEdge V2.0: Technical Breakdown</h1>
+        <div class="author-date">By Ajay Salunke | Security Engineering Update</div>
+
+        <p>Hey everyone, I want to share a detailed technical breakdown of my recent security project: <strong>SentinelEdge V2.0</strong>.</p>
+        
+        <p>When I built the first version, it was a simple script. It got the job done, but it had a critical flaw—it relied on basic HTTP redirects to block malicious traffic. The reality is that any standard automated scanner or experienced attacker would immediately see a "302 Redirect" and realize they hit a trap.</p>
+        
+        <p>To fix this, I completely tore down the old code and rebuilt the system from scratch. Here is a deep dive into how the new version handles threats:</p>
+
+        <h3>1. Multi-Modular Architecture</h3>
+        <p>I moved away from a single-file script and split the system into three distinct, maintainable components:</p>
+        <ul>
+            <li><strong>The Real Application:</strong> The actual, legitimate site that normal users interact with.</li>
+            <li><strong>The Honeypot (Dummy Site):</strong> A deliberately vulnerable-looking fake environment to keep attackers occupied.</li>
+            <li><strong>The Defensive Gateway:</strong> The core engine that sits in front of both, managing and inspecting all incoming traffic.</li>
+        </ul>
+
+        <h3>2. Transparent Proxy Deception (The Core Upgrade)</h3>
+        <p>This is the biggest improvement. The gateway now actively inspects incoming traffic for threats. If it detects an attack, <strong>it does not redirect the user</strong>.</p>
+        <p>Instead, it acts as a transparent proxy. It silently fetches the honeypot environment and serves it back to the attacker. The URL in their browser never changes, meaning the attacker thinks they are successfully exploiting the real server, while they are actually completely isolated in a fake trap.</p>
+
+        <h3>3. Forensic JSON Logging</h3>
+        <p>Defensive security is incomplete without logs. Every time the gateway intercepts an attack, it systematically records the exact timestamp, the payload used, and the routing details in a JSON audit file.</p>
+
+        <p>Building this was a fantastic hands-on experience in traffic routing, proxy mechanics, and defensive cybersecurity.</p>
+
+        <!-- YAHAN AAPKE TOOL KE REPO KA LINK HAI -->
+        <a href="https://github.com/ajaysalunkhe2026-netizen/Sentin-elEdge_Pro" target="_blank" class="github-link">View Code on GitHub</a>
+
+    </div>
+
+</body>
+</html>

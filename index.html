@@ -9,17 +9,19 @@
         :root { --bg: #0a0f1d; --neon: #00ff66; --card: #131c31; --text: #e2e8f0; }
         body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; }
         
-        /* Fixed Navigation */
+        /* Navigation */
         nav { background: var(--card); padding: 20px; border-bottom: 2px solid var(--neon); }
         nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; justify-content: center; }
         nav a { color: var(--text); text-decoration: none; font-weight: bold; font-size: 1.1em; }
         nav a:hover { color: var(--neon); }
 
-        /* Adjusted Hero Section */
-        .hero { padding: 60px 20px; text-align: center; }
-        h1 { color: var(--neon); font-size: 2.5em; margin-bottom: 10px; }
+        /* Hero Section */
+        .hero { padding: 80px 20px; text-align: center; }
+        h1 { color: var(--neon); font-size: 2.5em; margin-bottom: 15px; }
+        .hero p { color: #8892b0; font-size: 1.2em; }
         
-        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 0 20px 50px 20px; max-width: 1000px; margin: auto; }
+        /* Tools Section */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; padding: 0 20px 80px 20px; max-width: 1000px; margin: auto; }
         .tool-card { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid #374151; transition: 0.3s; }
         .tool-card:hover { border-color: var(--neon); }
         .btn { display: inline-block; background: var(--neon); color: var(--bg); padding: 12px 25px; text-decoration: none; font-weight: bold; border-radius: 6px; margin-top: 20px; }
@@ -42,12 +44,14 @@
     </div>
 
     <div class="tools-grid">
+        <!-- Tool 1 -->
         <div class="tool-card">
             <h3>PQC Vulnerability Checker</h3>
             <p>Real-time audit for quantum-risk in your cryptographic code.</p>
             <a href="pqc-checker.html" class="btn">Access Tool</a>
         </div>
         
+        <!-- Tool 2 -->
         <div class="tool-card">
             <h3>PQC-Netcheck Extension</h3>
             <p>VS Code extension for real-time network PQC readiness monitoring.</p>

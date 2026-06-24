@@ -7,4 +7,4 @@ layout: default
 
 Aapki personal website jahaan advanced tools aur knowledge milega.
 
-**Current Status:** Jekyll Migration in Progress.
+**Jekyll Migration Complete!**

@@ -3,41 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Data Protection Expert</title>
+    <title>{{ site.title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { background-color: #000000; color: white; }
+    </style>
 </head>
-<body class="bg-white">
-
-    <!-- Navbar -->
-    <nav class="border-b">
-        <div class="max-w-screen-2xl mx-auto px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 bg-emerald-600 rounded-2xl flex items-center justify-center">
-                        <i class="fa-solid fa-shield-halved text-white"></i>
-                    </div>
-                    <span class="font-bold text-xl">Ajay Salunke</span>
-                </div>
-                <div class="flex items-center gap-x-8 text-sm">
-                    <a href="#" class="hover:text-emerald-600">Services</a>
-                    <a href="#" class="hover:text-emerald-600">About</a>
-                    <a href="#" class="hover:text-emerald-600">Blog</a>
-                    <button class="px-5 py-2.5 bg-emerald-600 text-white text-sm rounded-xl hover:bg-emerald-700">Get Started</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Yahan par aapka index.md ka content automatically aayega -->
+<body>
     {{ content }}
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="max-w-screen-2xl mx-auto px-8 text-center text-sm text-gray-400">
-            © 2026 Ajay Salunke. All Rights Reserved.
-        </div>
-    </footer>
-
 </body>
 </html>

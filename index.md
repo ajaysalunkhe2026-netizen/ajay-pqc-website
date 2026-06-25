@@ -1,63 +1,160 @@
----
-title: Home
-layout: default
----
+<div class="max-w-screen-xl mx-auto px-6 py-10">
 
-<!-- Hero -->
-<div class="max-w-screen-2xl mx-auto px-8 pt-14 pb-16">
-    <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-            <h1 class="text-5xl font-bold leading-tight">Protect Your Business<br>from Cyber Threats</h1>
-            <p class="mt-5 text-lg text-gray-600">Professional data protection and cybersecurity solutions tailored for modern businesses.</p>
-            <div class="mt-8">
-                <button class="px-7 py-3.5 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-700">Book a Consultation</button>
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-10">
+        <div class="flex items-center gap-x-3">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-900 to-red-800 rounded-2xl flex items-center justify-center border border-red-700">
+                <i class="fa-solid fa-shield-halved text-white text-[28px]"></i>
+            </div>
+            <span class="font-bold text-2xl tracking-[-0.5px]">Ajay Salunke</span>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- LinkedIn Card -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 hover:border-red-600 transition-all">
+            <div class="flex items-center gap-x-3 mb-4">
+                <img src="https://picsum.photos/id/1005/40/40" class="w-10 h-10 rounded-full object-cover" alt="">
+                <div>
+                    <div class="font-semibold">Ajay Salunke</div>
+                    <div class="text-xs text-zinc-400">Cybersecurity Expert</div>
+                </div>
+            </div>
+            <div class="text-sm text-zinc-300 mb-4">Just published research on quantum threats and post-quantum cryptography preparation.</div>
+            <div class="flex items-center justify-between text-xs border-t border-zinc-700 pt-3">
+                <div class="flex items-center gap-x-4 text-zinc-400">
+                    <span><i class="fa-regular fa-thumbs-up mr-1"></i> 1.2k</span>
+                    <span><i class="fa-regular fa-comment mr-1"></i> 87</span>
+                </div>
+                <a href="#" class="text-red-500 text-xs font-medium">View on LinkedIn →</a>
             </div>
         </div>
-        <div>
-            <img src="https://picsum.photos/id/1015/650/480" class="rounded-2xl shadow-md" alt="Cybersecurity">
-        </div>
-    </div>
-</div>
 
-<!-- Services -->
-<div class="max-w-screen-2xl mx-auto px-8 py-14 bg-gray-50">
-    <div class="text-center mb-10">
-        <span class="text-emerald-600 text-sm font-semibold">WHAT WE OFFER</span>
-        <h2 class="text-3xl font-bold mt-2">Our Core Services</h2>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-7 rounded-2xl border">
-            <i class="fa-solid fa-shield-halved text-3xl text-emerald-600 mb-4"></i>
-            <h4 class="font-semibold text-xl">Cyber Fraud Protection</h4>
-            <p class="text-gray-600 mt-2 text-sm">Advanced systems to detect and prevent online fraud and financial attacks.</p>
-        </div>
-        <div class="bg-white p-7 rounded-2xl border">
-            <i class="fa-solid fa-user-lock text-3xl text-emerald-600 mb-4"></i>
-            <h4 class="font-semibold text-xl">Data Security Solutions</h4>
-            <p class="text-gray-600 mt-2 text-sm">Protect your sensitive data with enterprise-grade security measures.</p>
-        </div>
-        <div class="bg-white p-7 rounded-2xl border">
-            <i class="fa-solid fa-search text-3xl text-emerald-600 mb-4"></i>
-            <h4 class="font-semibold text-xl">Security Assessment</h4>
-            <p class="text-gray-600 mt-2 text-sm">Complete audit of your systems to identify and fix vulnerabilities.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Why Us -->
-<div class="max-w-screen-2xl mx-auto px-8 py-14">
-    <div class="grid md:grid-cols-2 gap-x-12 items-center">
-        <div>
-            <h2 class="text-3xl font-bold">Why Choose Us?</h2>
-            <div class="mt-6 space-y-4 text-gray-600">
-                <p>✓ 10+ years of hands-on cybersecurity experience</p>
-                <p>✓ Focus on real protection, not just reports</p>
-                <p>✓ Personalized solutions for your business needs</p>
+        <!-- Free Tool Card -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-5 hover:border-red-600 transition-all">
+            <div class="flex items-start gap-x-4">
+                <div class="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-shield-halved text-white text-3xl"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="font-semibold text-lg">SecureCheck</h3>
+                            <p class="text-xs text-zinc-400">by Ajay Salunke</p>
+                        </div>
+                        <span class="bg-zinc-800 text-red-400 text-xs px-3 py-1 rounded-full font-medium">FREE</span>
+                    </div>
+                    <div class="flex items-center gap-x-1 mt-2 text-yellow-400">
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star text-sm"></i>
+                        <i class="fa-solid fa-star-half-stroke text-sm"></i>
+                        <span class="text-xs text-zinc-400 ml-2">(4.7)</span>
+                    </div>
+                    <p class="text-xs text-zinc-400 mt-2 line-clamp-2">Quick security scanner for basic vulnerability checks and password strength analysis.</p>
+                    <button class="mt-4 w-full bg-red-600 hover:bg-red-700 transition-all text-sm py-2 rounded-xl font-medium">Get • Free</button>
+                </div>
             </div>
         </div>
-        <div class="mt-8 md:mt-0">
-            <img src="https://picsum.photos/id/160/600/380" class="rounded-2xl" alt="">
+
+        <!-- Cybersecurity Services Card -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 hover:border-red-600 transition-all">
+            <div class="flex items-center gap-x-3 mb-4">
+                <div class="w-12 h-12 bg-red-600 rounded-2xl flex items-center justify-center">
+                    <i class="fa-solid fa-shield-halved text-white text-2xl"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Cybersecurity Services</h3>
+                    <p class="text-xs text-zinc-400">Professional Protection</p>
+                </div>
+            </div>
+
+            <div class="space-y-3 text-sm text-zinc-300 mb-5">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-check text-red-500"></i>
+                    <span>Fraud Defense & Prevention</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-check text-red-500"></i>
+                    <span>Digital Asset Protection</span>
+                </div>
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-check text-red-500"></i>
+                    <span>Security Audits & Red Teaming</span>
+                </div>
+            </div>
+
+            <button class="w-full bg-red-600 hover:bg-red-700 transition-all py-2.5 rounded-xl text-sm font-medium">
+                Explore Services
+            </button>
+        </div>
+
+        <!-- Research & Articles Card -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 hover:border-red-600 transition-all">
+            <div class="flex items-center gap-x-3 mb-4">
+                <i class="fa-solid fa-book text-red-500 text-3xl"></i>
+                <div>
+                    <h3 class="text-xl font-semibold">Research & Articles</h3>
+                    <p class="text-xs text-zinc-400">Latest Publications</p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <div class="text-sm font-medium mb-1">Post-Quantum Cryptography Readiness in 2026</div>
+                <div class="text-xs text-zinc-400">Published: Jan 2026 • 12 min read</div>
+            </div>
+
+            <p class="text-sm text-zinc-400 mb-5 line-clamp-3">
+                A detailed analysis of how organizations can prepare for quantum threats and migrate to post-quantum cryptographic standards.
+            </p>
+
+            <a href="#" class="inline-flex items-center text-red-500 text-sm font-medium hover:text-red-400">
+                Read Full Article <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+            </a>
+        </div>
+
+        <!-- Get In Touch Card -->
+        <div class="bg-zinc-900 border border-zinc-700 rounded-2xl p-6 hover:border-red-600 transition-all">
+            <div class="flex items-center gap-x-3 mb-5">
+                <i class="fa-solid fa-envelope text-red-500 text-3xl"></i>
+                <div>
+                    <h3 class="text-xl font-semibold">Get In Touch</h3>
+                    <p class="text-xs text-zinc-400">Professional Consultation</p>
+                </div>
+            </div>
+
+            <div class="space-y-4 text-sm">
+                <div>
+                    <div class="text-xs text-zinc-400 mb-1">Email</div>
+                    <div class="font-medium">ajay@cybershield.com</div>
+                </div>
+                <div>
+                    <div class="text-xs text-zinc-400 mb-1">Response Time</div>
+                    <div class="font-medium">Within 24–48 hours</div>
+                </div>
+            </div>
+
+            <button class="mt-6 w-full bg-red-600 hover:bg-red-700 transition-all py-2.5 rounded-xl text-sm font-medium">
+                Book a Consultation
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-16 flex flex-col items-center gap-y-4">
+        <div class="flex flex-wrap justify-center gap-x-4 gap-y-3">
+            <a href="#" class="px-6 py-2.5 bg-zinc-900 border border-zinc-700 hover:border-red-600 text-sm rounded-xl transition-all">About Me</a>
+            <a href="#" class="px-6 py-2.5 bg-zinc-900 border border-zinc-700 hover:border-red-600 text-sm rounded-xl transition-all">Privacy Policy</a>
+            <a href="#" class="px-6 py-2.5 bg-zinc-900 border border-zinc-700 hover:border-red-600 text-sm rounded-xl transition-all">Terms & Conditions</a>
+        </div>
+
+        <div class="text-zinc-500 text-sm mt-6">
+            © 2026 <span class="text-white">Ajay Salunke</span>. All Rights Reserved.
         </div>
     </div>
+
 </div>

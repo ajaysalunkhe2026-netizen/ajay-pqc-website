@@ -27,6 +27,7 @@ export function Navbar() {
           <Link href="/approach" className="hover:text-dark transition">Approach</Link>
           <Link href="/insights" className="hover:text-dark transition">Insights</Link>
           <Link href="/about" className="hover:text-dark transition">About</Link>
+          <Link href="/tools" className="hover:text-dark transition">Tools</Link>
         </div>
 
         {/* Desktop CTA */}
@@ -78,6 +79,13 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               About
+            </Link>
+            <Link
+              href="/tools"
+              className="block text-muted hover:text-dark transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Tools
             </Link>
             <Link
               href="/contact"

@@ -26,6 +26,9 @@ export default function AboutPage() {
             What I do
           </h2>
           <p className="text-muted text-[16px] leading-relaxed mb-4">
+            Independent lab and architecture review — not a product vendor.
+          </p>
+          <p className="text-muted text-[16px] leading-relaxed mb-4">
             I work on the system design side of post-quantum cryptography migration. 
             My focus is on helping organizations understand their current cryptographic 
             posture, identify real risk, and design practical transition paths.
@@ -90,6 +93,10 @@ export default function AboutPage() {
             <li className="flex gap-3">
               <span className="text-primary">–</span>
               Over-promise timelines or performance outcomes
+            </li>
+            <li className="flex gap-3">
+              <span className="text-primary">–</span>
+              Sell a proxy or wrapper as a completed estate migration
             </li>
           </ul>
         </section>

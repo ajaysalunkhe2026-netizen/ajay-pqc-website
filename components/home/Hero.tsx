@@ -16,8 +16,9 @@ export function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-muted max-w-3xl mb-8 leading-relaxed">
-          I help organizations think through cryptography migration with clarity — 
-          focusing on architecture, risk, and real-world constraints rather than hype.
+          Independent lab and architecture review for post-quantum migration — not a product vendor.
+          I work through cryptography migration with clarity: architecture, risk, and real-world
+          constraints rather than hype.
         </p>
 
         <div className="flex flex-wrap gap-4">

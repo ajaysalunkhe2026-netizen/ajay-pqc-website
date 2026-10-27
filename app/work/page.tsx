@@ -5,33 +5,33 @@ const projects = [
     title: "PQC Readiness Assessment",
     tag: "Architecture",
     summary:
-      "A structured method to evaluate an organization’s current cryptographic posture and identify realistic migration priorities.",
+      "A structured method to evaluate an organization's current cryptographic posture and identify realistic migration priorities through empirical measurement.",
     points: [
-      "Inventory of cryptographic usage across systems",
-      "Risk-based prioritization instead of blanket upgrades",
-      "Focus on operational constraints and live system impact",
+      "Mapping cryptographic baselines by generating Cryptographic Bill of Materials (CBOM) via AST parsing",
+      "Identifying hardcoded classical primitives and evaluating gaps against NIST FIPS 203, 204, and 205 baselines",
+      "Risk-scoring based on hardware constraints, memory limits, and protocol dependencies—not just blanket upgrades",
     ],
   },
   {
     title: "Hybrid Cryptography Design",
     tag: "System Design",
     summary:
-      "Practical patterns for running classical and post-quantum algorithms together during transition periods.",
+      "Practical patterns for running classical and post-quantum algorithms together during transition periods, focusing on wire-level realities.",
     points: [
-      "Hybrid key exchange and signature approaches",
-      "Compatibility and performance considerations",
-      "Phased introduction without sudden cutovers",
+      "Modeling TLS 1.3 hybrid handshakes to identify and prevent 'Silent Classical' fallback scenarios (e.g., Draft 0x6399 vs Final 0x11EC)",
+      "Evaluating wire-level consequences like MTU packet fragmentation and byte bloat during enterprise rollouts",
+      "Designing operational mitigation patterns that distinguish between quantum-safe proxy wrappers and true origin path upgrades",
     ],
   },
   {
     title: "Crypto Inventory & Visibility",
     tag: "Visibility",
     summary:
-      "Approaches to discover, classify, and maintain visibility of cryptographic assets across applications and infrastructure.",
+      "Approaches to discover, classify, and maintain visibility of cryptographic assets across applications without relying on unverified vendor dashboards.",
     points: [
-      "Asset discovery and classification methods",
-      "Tracking ownership and usage context",
-      "Supporting better risk and migration decisions",
+      "Deploying custom AST parsing utilities (like SUSTUM-PQC-Checker MVP) for static codebase discovery",
+      "Generating CycloneDX-compliant CBOMs to track algorithm lifecycles and deprecation schedules",
+      "Tracking key ownership and execution context through zero-trust, out-of-band architectural models",
     ],
   },
 ];

@@ -5,33 +5,33 @@ const projects = [
     title: "PQC Readiness Assessment",
     tag: "Architecture",
     summary:
-      "A structured method to evaluate an organization's current cryptographic posture and identify realistic migration priorities through empirical measurement.",
+      "A structured way to look at current cryptographic use and set migration priorities from risk and constraints — not from a single green dashboard.",
     points: [
-      "Mapping cryptographic baselines by generating Cryptographic Bill of Materials (CBOM) via AST parsing",
-      "Identifying hardcoded classical primitives and evaluating gaps against NIST FIPS 203, 204, and 205 baselines",
-      "Risk-scoring based on hardware constraints, memory limits, and protocol dependencies—not just blanket upgrades",
+      "Map where classical crypto still appears and what depends on it",
+      "Compare usage against NIST PQC families (ML-KEM, ML-DSA, SLH-DSA) without treating every gap as equal priority",
+      "Prioritise by exposure, data lifespan, and operational constraint — not blanket upgrades",
     ],
   },
   {
     title: "Hybrid Cryptography Design",
     tag: "System Design",
     summary:
-      "Practical patterns for running classical and post-quantum algorithms together during transition periods, focusing on wire-level realities.",
+      "Practical patterns for classical and post-quantum algorithms running together during transition, with attention to what actually happens on the wire.",
     points: [
-      "Modeling TLS 1.3 hybrid handshakes to identify and prevent 'Silent Classical' fallback scenarios (e.g., Draft 0x6399 vs Final 0x11EC)",
-      "Evaluating wire-level consequences like MTU packet fragmentation and byte bloat during enterprise rollouts",
-      "Designing operational mitigation patterns that distinguish between quantum-safe proxy wrappers and true origin path upgrades",
+      "Model TLS 1.3 hybrid negotiation traps (e.g. draft 0x6399 vs final 0x11EC leading to silent classical sessions)",
+      "Account for wire effects: larger handshakes, MTU pressure, and middlebox behaviour",
+      "Separate edge proxy or wrapper from true origin-path upgrade, with an exit plan for temporary layers",
     ],
   },
   {
     title: "Crypto Inventory & Visibility",
     tag: "Visibility",
     summary:
-      "Approaches to discover, classify, and maintain visibility of cryptographic assets across applications without relying on unverified vendor dashboards.",
+      "Treat inventory as a process with owners and gaps — not only a scan file or a vendor readiness label.",
     points: [
-      "Deploying custom AST parsing utilities (like SUSTUM-PQC-Checker MVP) for static codebase discovery",
-      "Generating CycloneDX-compliant CBOMs to track algorithm lifecycles and deprecation schedules",
-      "Tracking key ownership and execution context through zero-trust, out-of-band architectural models",
+      "Prefer inventory with owners, paths, and explicit unknown rows over a one-shot scan PDF",
+      "Track algorithm use so “PQC ready” is measured against real usage, not only a dashboard flag",
+      "Record what was not scanned — that gap is part of the inventory",
     ],
   },
 ];
@@ -51,6 +51,7 @@ export default function WorkPage() {
         <p className="text-lg text-muted leading-relaxed">
           Focused work on practical system design for post-quantum cryptography migration. 
           The emphasis is on architecture, risk, and operational reality.
+          Lab and architecture patterns — not a product catalogue.
         </p>
       </div>
 

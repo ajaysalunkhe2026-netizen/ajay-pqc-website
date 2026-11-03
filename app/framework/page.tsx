@@ -70,7 +70,9 @@ export default function FrameworkPage() {
             Four questions the framework answers
           </h2>
           <ol className="list-decimal pl-5 space-y-2">
-            <li>What cryptography is actually in use — and what was not scanned?</li>
+            <li>
+              What cryptography is actually in use — and what was not scanned?
+            </li>
             <li>Where is quantum-relevant risk concentrated?</li>
             <li>How hard is it to change algorithms on each path?</li>
             <li>
@@ -94,7 +96,9 @@ export default function FrameworkPage() {
               (ML-DSA / SLH-DSA / PKI).
             </li>
             <li>
-              <span className="text-dark font-medium">Measurement over labels</span>{" "}
+              <span className="text-dark font-medium">
+                Measurement over labels
+              </span>{" "}
               — handshake success ≠ negotiated PQ group; ticket issued ≠ resume
               success.
             </li>
@@ -167,11 +171,15 @@ export default function FrameworkPage() {
               partial CBOM; large not-scanned set.
             </li>
             <li>
-              <span className="text-dark font-medium">2 Risk &amp; agility visible</span>{" "}
+              <span className="text-dark font-medium">
+                2 Risk &amp; agility visible
+              </span>{" "}
               — scored assets; measurements defined.
             </li>
             <li>
-              <span className="text-dark font-medium">3 Hybrid-capable &amp; measured</span>{" "}
+              <span className="text-dark font-medium">
+                3 Hybrid-capable &amp; measured
+              </span>{" "}
               — negotiated-group logging; resume checks; signature track owned.
             </li>
             <li>
@@ -252,7 +260,7 @@ export default function FrameworkPage() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="/crypto-agility-readiness-framework-v1.pdf.pdf"
+              href="/crypto-agility-readiness-framework-v1.pdf"
               className="inline-flex px-5 py-2.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary-hover transition"
             >
               Download PDF

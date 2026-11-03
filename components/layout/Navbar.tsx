@@ -10,9 +10,12 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
       <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
+        <Link
+          href="/"
+          className="flex items-center gap-2.5"
+          onClick={() => setIsOpen(false)}
+        >
           <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-sm">
             AS
           </div>
@@ -23,11 +26,24 @@ export function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-[15px] text-muted">
-          <Link href="/work" className="hover:text-dark transition">Work</Link>
-          <Link href="/approach" className="hover:text-dark transition">Approach</Link>
-          <Link href="/insights" className="hover:text-dark transition">Insights</Link>
-          <Link href="/about" className="hover:text-dark transition">About</Link>
-          <Link href="/tools" className="hover:text-dark transition">Tools</Link>
+          <Link href="/work" className="hover:text-dark transition">
+            Work
+          </Link>
+          <Link href="/approach" className="hover:text-dark transition">
+            Approach
+          </Link>
+          <Link href="/insights" className="hover:text-dark transition">
+            Insights
+          </Link>
+          <Link href="/about" className="hover:text-dark transition">
+            About
+          </Link>
+          <Link href="/framework" className="hover:text-dark transition">
+            Framework
+          </Link>
+          <Link href="/tools" className="hover:text-dark transition">
+            Tools
+          </Link>
         </div>
 
         {/* Desktop CTA */}
@@ -79,6 +95,13 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               About
+            </Link>
+            <Link
+              href="/framework"
+              className="block text-muted hover:text-dark transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Framework
             </Link>
             <Link
               href="/tools"

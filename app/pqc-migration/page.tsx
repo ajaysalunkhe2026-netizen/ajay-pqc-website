@@ -2,18 +2,6 @@
 
 import React, { useState } from 'react';
 
-export const metadata = {
-  title: "PQC Migration Architecture & CBOM Inventory Engine | Ajay Salunkhe",
-  description: "Free un-gated PQC Migration readiness assessment, MTU fragmentation analysis, and automated CycloneDX CBOM JSON exporter for enterprise security architects.",
-  keywords: [
-    "PQC migration",
-    "Post-Quantum Cryptography migration",
-    "CBOM generator",
-    "TLS 1.3 hybrid migration",
-    "Crypto-agility assessment"
-  ],
-};
-
 export default function PQCMigrationPage() {
   const [algo, setAlgo] = useState('ML-KEM-768');
   const [mtu, setMtu] = useState(1500);
@@ -46,7 +34,7 @@ export default function PQCMigrationPage() {
     };
 
     setReport(res);
-    setOpenAccordion(2); // Automatically open Telemetry panel
+    setOpenAccordion(2);
   };
 
   const downloadCBOM = () => {
@@ -85,17 +73,31 @@ export default function PQCMigrationPage() {
 
   return (
     <div style={{ backgroundColor: '#0d1117', color: '#c9d1d9', fontFamily: 'monospace', minHeight: '100vh', padding: '20px' }}>
+      {/* Software Application & FAQ Schema for Google Rich Snippets */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'PQC Migration Readiness & CBOM Hub',
-            operatingSystem: 'All',
-            applicationCategory: 'SecurityApplication',
-            author: { '@type': 'Person', name: 'Ajay Salunkhe', url: 'https://ajaysalunkhe.com' },
-            description: 'Zero-server, client-side Post-Quantum Cryptography migration assessment tool with automated CycloneDX CBOM generation.',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What is PQC Migration?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'PQC Migration is the strategic process of transitioning enterprise cryptographic systems from legacy algorithms (like RSA and ECC) to NIST-standardized Post-Quantum Cryptography (such as ML-KEM and ML-DSA) to protect against quantum computing decryption threats.'
+                }
+              },
+              {
+                '@type': 'Question',
+                name: 'How does client-side CBOM generation work?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'This un-gated platform performs browser-based cryptographic asset inventory analysis and exports a machine-readable CycloneDX v1.5 compliant Cryptographic Bill of Materials (CBOM) JSON instantly without server latency.'
+                }
+              }
+            ]
           }),
         }}
       />
@@ -105,12 +107,13 @@ export default function PQCMigrationPage() {
           ZERO-SERVER DOM EXECUTION | NO GATED FORMS
         </span>
         
-        {/* Exact Match Generic Keyword Optimized H1 */}
+        {/* Exact Match Generic Keyword H1 */}
         <h1 style={{ color: '#58a6ff', fontSize: '24px', borderBottom: '1px solid #30363d', paddingBottom: '10px', marginTop: '15px' }}>
           PQC Migration Engineering & Cryptographic Bill of Materials (CBOM) Hub
         </h1>
-        <p style={{ color: '#8b949e', fontSize: '14px', marginBottom: '25px' }}>
-          Independent Technical Architecture by Ajay Salunkhe. Built to bypass corporate fluff and solve bare-metal TLS 1.3 cryptographic expansion issues for PQC migration strategies.
+        
+        <p style={{ color: '#8b949e', fontSize: '14px', marginBottom: '20px', lineHeight: '1.5' }}>
+          Welcome to the independent <strong style={{ color: '#c9d1d9' }}>PQC Migration</strong> technical hub by Ajay Salunkhe. Designed for security architects to evaluate TLS 1.3 hybrid key encapsulation packet expansion, solve MTU blackhole fragmentation risks, and export CycloneDX compliance reports without corporate gated forms.
         </p>
 
         {/* Category 1 */}

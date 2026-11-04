@@ -2,6 +2,18 @@
 
 import React, { useState } from 'react';
 
+export const metadata = {
+  title: "PQC Migration Architecture & CBOM Inventory Engine | Ajay Salunkhe",
+  description: "Free un-gated PQC Migration readiness assessment, MTU fragmentation analysis, and automated CycloneDX CBOM JSON exporter for enterprise security architects.",
+  keywords: [
+    "PQC migration",
+    "Post-Quantum Cryptography migration",
+    "CBOM generator",
+    "TLS 1.3 hybrid migration",
+    "Crypto-agility assessment"
+  ],
+};
+
 export default function PQCMigrationPage() {
   const [algo, setAlgo] = useState('ML-KEM-768');
   const [mtu, setMtu] = useState(1500);
@@ -92,11 +104,13 @@ export default function PQCMigrationPage() {
         <span style={{ background: '#238636', color: '#fff', padding: '5px 10px', fontSize: '11px', borderRadius: '4px', fontWeight: 'bold' }}>
           ZERO-SERVER DOM EXECUTION | NO GATED FORMS
         </span>
+        
+        {/* Exact Match Generic Keyword Optimized H1 */}
         <h1 style={{ color: '#58a6ff', fontSize: '24px', borderBottom: '1px solid #30363d', paddingBottom: '10px', marginTop: '15px' }}>
-          PQC Migration Engineering & CBOM Hub
+          PQC Migration Engineering & Cryptographic Bill of Materials (CBOM) Hub
         </h1>
         <p style={{ color: '#8b949e', fontSize: '14px', marginBottom: '25px' }}>
-          Independent Technical Architecture by Ajay Salunkhe. Built to bypass corporate fluff and solve bare-metal TLS 1.3 cryptographic expansion issues.
+          Independent Technical Architecture by Ajay Salunkhe. Built to bypass corporate fluff and solve bare-metal TLS 1.3 cryptographic expansion issues for PQC migration strategies.
         </p>
 
         {/* Category 1 */}

@@ -25,7 +25,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 text-[15px] text-muted">
+        <div className="hidden md:flex items-center gap-7 text-[15px] text-muted">
           <Link href="/work" className="hover:text-dark transition">
             Work
           </Link>
@@ -43,6 +43,9 @@ export function Navbar() {
           </Link>
           <Link href="/tools" className="hover:text-dark transition">
             Tools
+          </Link>
+          <Link href="/pqc-migration" className="text-blue-600 font-semibold hover:text-blue-800 transition">
+            PQC Hub
           </Link>
         </div>
 
@@ -109,6 +112,13 @@ export function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Tools
+            </Link>
+            <Link
+              href="/pqc-migration"
+              className="block text-blue-600 font-semibold hover:text-blue-800 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              PQC Hub
             </Link>
             <Link
               href="/contact"

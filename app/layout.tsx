@@ -19,9 +19,11 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.ajaysalunkhe.com/pqc-social-card.png",
+        secureUrl: "https://www.ajaysalunkhe.com/pqc-social-card.png",
         width: 1200,
         height: 630,
         alt: "Ajay Salunkhe - PQC Migration Architecture",
+        type: "image/png",
       },
     ],
     locale: "en_US",

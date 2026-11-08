@@ -3,11 +3,9 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/projects" },
-  alternates: { canonical: "/projects" },
   title: "Projects — PQC & Cryptography Engineering",
   description:
     "Engineering notes and project documentation by Ajay Salunkhe. Explore a lab proof of concept for post-quantum PKI migration, cryptographic algorithm retirement, policy enforcement, and auditability.",
-  alternates: { canonical: "/projects" },
   openGraph: {
     title: "Projects | Ajay Salunkhe",
     description:

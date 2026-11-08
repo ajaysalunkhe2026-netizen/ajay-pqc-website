@@ -4,15 +4,58 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+function AlgorithmPathMark() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 44 44"
+      className="h-10 w-10 shrink-0"
+      fill="none"
+    >
+      <rect x="1" y="1" width="42" height="42" rx="11" fill="#10232D" />
+      <path
+        d="M8 31V12H17V25H25V8H34V31"
+        stroke="#55D9C4"
+        strokeWidth="2.2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+      <path
+        d="M8 12L17 21H25L34 12"
+        stroke="#55D9C4"
+        strokeOpacity=".48"
+        strokeWidth="1.2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
+      />
+      <circle cx="8" cy="12" r="2" fill="#55D9C4" />
+      <circle cx="25" cy="8" r="2" fill="#55D9C4" />
+      <circle cx="34" cy="31" r="2" fill="#55D9C4" />
+    </svg>
+  );
+}
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-white/90 backdrop-blur-md">
       <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5" onClick={() => setIsOpen(false)}>
-          <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-sm">AS</div>
-          <span className="font-semibold tracking-tight text-dark text-[17px]">Ajay Salunkhe</span>
+        <Link
+          href="/"
+          className="flex items-center gap-3 group"
+          onClick={() => setIsOpen(false)}
+          aria-label="Ajay Salunkhe — home"
+        >
+          <AlgorithmPathMark />
+          <span className="flex flex-col justify-center leading-none">
+            <span className="font-bold tracking-[0.075em] text-dark text-[14px] sm:text-[15px]">
+              AJAY SALUNKHE
+            </span>
+            <span className="mt-1.5 text-[9px] sm:text-[10px] font-semibold tracking-[0.19em] text-muted">
+              SYSTEM ARCHITECT
+            </span>
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-7 text-[15px] text-muted">

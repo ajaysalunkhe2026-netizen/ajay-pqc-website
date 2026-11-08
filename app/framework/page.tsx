@@ -3,11 +3,9 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/framework" },
-  alternates: { canonical: "/framework" },
   title: "Crypto Agility Readiness Framework",
   description:
     "Reference architecture for crypto agility and PQC migration readiness — inventory first, measurement over labels, KEM path vs signature track.",
-  alternates: { canonical: "/framework" },
 };
 
 export default function FrameworkPage() {

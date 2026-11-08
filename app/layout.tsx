@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/" },
   metadataBase: new URL("https://www.ajaysalunkhe.com"),
   title: {
     default: "Ajay Salunkhe | System Architect · Post-Quantum Cryptography",
@@ -11,8 +12,6 @@ export const metadata: Metadata = {
   },
   description:
     "System Architect focused on practical post-quantum cryptography migration, cryptographic risk, and secure system design aligned with NIST FIPS 203 and 204.",
-  alternates: { canonical: "/" },
-  alternates: { canonical: "/" },
   verification: {
     google: "YwQXvGHVnX7G9E0ip1sQ7GS8ZxV64dXfjicSIXlRO5o",
   },

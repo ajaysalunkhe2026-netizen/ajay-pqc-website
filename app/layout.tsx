@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "System Architect focused on practical post-quantum cryptography migration, cryptographic risk, and secure system design aligned with NIST FIPS 203 and 204.",
   alternates: { canonical: "/" },
+  alternates: { canonical: "/" },
   verification: {
     google: "YwQXvGHVnX7G9E0ip1sQ7GS8ZxV64dXfjicSIXlRO5o",
   },

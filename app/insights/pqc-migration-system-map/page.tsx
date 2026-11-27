@@ -4,11 +4,16 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title:
     'PQC Migration in Practice: Inventory, Hybrid TLS, and What "Enabled" Often Misses | Ajay Salunkhe',
-  description: "A practical map of PQC migration: inventory vs scan, TLS hybrid selected-group evidence, classical fallback, proxy boundaries, and separate certificate migration.",\n  alternates:{canonical:"/insights/pqc-migration-system-map"},\n  openGraph:{type:"article",url:"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map"},
+  description: "A practical map of PQC migration: inventory vs scan, TLS hybrid selected-group evidence, classical fallback, proxy boundaries, and separate certificate migration.",
+  alternates:{canonical:"/insights/pqc-migration-system-map"},
+  openGraph:{type:"article",url:"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map"},
 };
 
 export default function PqcMigrationSystemMapPage() {
-  return (\n    <>\n    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"PQC migration in practice: a system map, not a dashboard label","description":"PQC migration system map covering inventory, TLS hybrid selected-group evidence, fallback, proxies, and certificate migration.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map"},"url":"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map","author":{"@type":"Person","name":"Ajay Salunkhe","url":"https://www.ajaysalunkhe.com/about"},"publisher":{"@type":"Person","name":"Ajay Salunkhe","url":"https://www.ajaysalunkhe.com"},"inLanguage":"en"})}}/>\n    <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 py-16">
+  return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":"PQC migration in practice: a system map, not a dashboard label","description":"PQC migration system map covering inventory, TLS hybrid selected-group evidence, fallback, proxies, and certificate migration.","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map"},"url":"https://www.ajaysalunkhe.com/insights/pqc-migration-system-map","author":{"@type":"Person","name":"Ajay Salunkhe","url":"https://www.ajaysalunkhe.com/about"},"publisher":{"@type":"Person","name":"Ajay Salunkhe","url":"https://www.ajaysalunkhe.com"},"inLanguage":"en"})}}/>
+    <div className="w-full max-w-[1600px] mx-auto px-5 md:px-8 py-16">
       <article className="max-w-3xl">
         <div className="text-sm text-primary font-medium mb-4">Insights</div>
 
@@ -334,4 +339,7 @@ export default function PqcMigrationSystemMapPage() {
           </a>
         </div>
       </article>
-    </div>\n    </>\n  );\n}
+    </div>
+    </>
+  );
+}

@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Projects | Ajay Salunkhe — PQC & Cryptography Engineering",
+  title: "Projects | Practical PQC Migration Lab",
   description:
-    "Engineering notes and project documentation by Ajay Salunkhe. Explore a lab proof of concept for post-quantum PKI migration, cryptographic algorithm retirement, policy enforcement, and auditability.",
+    "Independent PQC migration lab notes and public repository links. Evidence is bounded; local-only results are not represented as publicly reproducible.",
   openGraph: {
     title: "Projects | Ajay Salunkhe",
     description:
-      "Practical project work in post-quantum cryptography, PKI migration, and cryptographic algorithm retirement.",
+      "PQC migration experiments, PKI algorithm retirement, and evidence boundaries.",
     url: "https://www.ajaysalunkhe.com/projects",
     siteName: "Ajay Salunkhe",
     type: "website",

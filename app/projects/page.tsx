@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     url: "https://www.ajaysalunkhe.com/projects",
     siteName: "Ajay Salunkhe",
     type: "website",
-    url:"https://www.ajaysalunkhe.com/projects",
   },
 };
 

@@ -5,13 +5,13 @@ export const metadata: Metadata = {
   title: "Projects | Practical PQC Migration Lab",
   description:
     "Independent PQC migration lab notes and public repository links. Evidence is bounded; local-only results are not represented as publicly reproducible.",
-  openGraph: {
+  alternates:{canonical:"/projects"},\n  openGraph: {
     title: "Projects | Ajay Salunkhe",
     description:
       "PQC migration experiments, PKI algorithm retirement, and evidence boundaries.",
     url: "https://www.ajaysalunkhe.com/projects",
     siteName: "Ajay Salunkhe",
-    type: "website",
+    type: "website",\n    url:"https://www.ajaysalunkhe.com/projects",
   },
 };
 

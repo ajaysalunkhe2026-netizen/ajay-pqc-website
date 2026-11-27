@@ -1,0 +1,3 @@
+import type {MetadataRoute} from "next";
+const base="https://www.ajaysalunkhe.com";
+export default function sitemap():MetadataRoute.Sitemap{return ["/","/about","/approach","/work","/projects","/contact","/insights","/insights/label-is-not-measurement","/insights/track-a-track-b","/insights/inventory-owners-unknowns","/insights/silent-classical-fallback","/insights/wire-size-effects","/insights/pqc-migration-system-map"].map(path=>({url:base+path,changeFrequency:path==="/"?"weekly":"monthly",priority:path==="/" ? 1 : path.startsWith("/insights/")?0.7:0.6}));}

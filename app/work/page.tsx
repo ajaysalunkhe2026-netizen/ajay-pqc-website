@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link";\nimport type {Metadata} from "next";\nexport const metadata:Metadata={title:"Selected Work | PQC Migration Architecture",description:"Selected architecture notes on PQC readiness, hybrid cryptography design, and cryptographic inventory visibility.",alternates:{canonical:"/work"}};
 
 const projects = [
   {
